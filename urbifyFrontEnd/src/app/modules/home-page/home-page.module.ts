@@ -4,6 +4,10 @@ import { HomePageComponent } from './home-page.component';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { NbLayoutModule } from '@nebular/theme';
 import { SliderModule } from 'src/app/shared/slider/slider.module';
+import {NbIconModule} from '@nebular/theme';
+import {NbCardModule} from '@nebular/theme';
+import {NbSelectModule} from '@nebular/theme';
+import {NbPopoverModule} from '@nebular/theme';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent}
@@ -15,10 +19,16 @@ const routes: Routes = [
     CommonModule,
     NbLayoutModule,
     SliderModule,
+    NbIconModule,
+    NbCardModule,
+    NbSelectModule,
+    NbPopoverModule,
     RouterModule.forChild(routes)
   ],
   exports: [
     RouterModule
   ]
 })
-export class HomePageModule { }
+export class HomePageModule {
+  
+ }
