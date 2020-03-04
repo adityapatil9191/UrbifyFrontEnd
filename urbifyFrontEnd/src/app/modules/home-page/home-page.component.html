@@ -1,22 +1,32 @@
 <!-- <app-slider></app-slider> -->
-<nb-card  class="top-filterSort-bar">
-    <nb-card-body >
-        <p class="filter-text-top"><nb-icon class="top-filter-funnel" icon="funnel"></nb-icon>Filter</p>
-            <nb-select  placeholder="Filter">
-                <nb-option [value]=null>Clear Seletion</nb-option>
-                <nb-option [value]="1">Rating > 4 stars</nb-option>
-                <nb-option [value]="2">Rating > 4 and < 3 stars</nb-option>
-                <nb-option [value]="3">Budget < 4,00000</nb-option>
-                <nb-option [value]="4">Budget > 4,00000</nb-option>
-                <nb-option [value]="5">Budget > 6,00000</nb-option>
-              </nb-select>
-        <nb-select class="dropdown-sort" placeholder="Sort By">
-            <nb-option [value]=null>Clear Selection</nb-option>
-            <nb-option [value]="0">Newest First</nb-option>
-            <nb-option [value]="1">Most Popular</nb-option>
-            <nb-option [value]="2">Budget High to Low</nb-option>
-            <nb-option [value]="3">Budget Low to High</nb-option>
-            <nb-option [value]="4">Highest Rating</nb-option>
-          </nb-select>
-    </nb-card-body>
-  </nb-card>
+
+  <div class="card-row">
+    <div class="card-col">
+      <nb-card class="tiny" size="tiny">
+        <nb-card-body class="body-card-filter">
+                <p class="filter-text-top"><nb-icon class="top-filter-funnel" icon="funnel"></nb-icon>Filter</p>
+                    <nb-select  placeholder="Filter">
+                        <nb-option [value]=null>Clear Seletion</nb-option>
+                        <nb-option [value]="1">Rating > 4 stars</nb-option>
+                        <nb-option [value]="2">Rating > 4 and < 3 stars</nb-option>
+                        <nb-option [value]="3">Budget < 4,00000</nb-option>
+                        <nb-option [value]="4">Budget > 4,00000</nb-option>
+                        <nb-option [value]="5">Budget > 6,00000</nb-option>
+                      </nb-select>
+                <nb-select class="dropdown-sort" placeholder="Sort By">
+                    <nb-option [value]=null>Clear Selection</nb-option>
+                    <nb-option [value]="0">Newest First</nb-option>
+                    <nb-option [value]="1">Most Popular</nb-option>
+                    <nb-option [value]="2">Budget High to Low</nb-option>
+                    <nb-option [value]="3">Budget Low to High</nb-option>
+                    <nb-option [value]="4">Highest Rating</nb-option>
+                  </nb-select>
+            </nb-card-body>
+      </nb-card>
+    </div>
+    <div class="card-col">
+      <nb-card class="how-it-works-card" size="tiny">
+        <nb-card-header>Large card</nb-card-header>
+      </nb-card>
+    </div>
+  </div>
