@@ -1,7 +1,7 @@
 
-.dropdown-sort{
-    margin-left: 3%;
-}
+// .dropdown-sort{
+//     margin-left: 3%;
+// }
 
 .filter-text-top{
     font-weight: 600;
@@ -12,9 +12,9 @@
     padding-bottom: 5rem;
   }
 
-.body-card-filter{
-    margin: 4%;
-}
+// .body-card-filter{
+//     margin: 4%;
+// }
 
   :host {
     display: block;
@@ -33,10 +33,37 @@
     margin: 0 0.5rem;
   }
 
-  .tiny{
-      margin:2%;
-  }
+//   .tiny{
+//       margin:2%;
+//   }
+
+.default-card-margin{
+    margin-top: 1%;
+}
+
+.button-dropdown-filter{
+    margin:1%;
+}
+
 
   .how-it-works-card{
       margin:2%;
+  }
+
+  .step-description{
+    font-weight: 700;
+  }
+
+  
+  .professional-image{
+    border: 1px solid #ddd; 
+    border-radius: 5px; 
+    padding: 7px;
+    width: 90%;
+    padding: auto;
+    display: block;
+    height: auto;
+    position: relative;
+    max-width: 150px;
+    margin-top: 6%;
   }
