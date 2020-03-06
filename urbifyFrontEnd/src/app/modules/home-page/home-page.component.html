@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-md-3 default-card-margin">
             <nb-card class="tiny" size="tiny">
-                <nb-card-body class="body-card-filter">
+                <nb-card-body>
                         <p class="filter-text-top"><nb-icon  icon="funnel"></nb-icon>Filter</p>
                             <nb-select class="button-dropdown-filter" placeholder="Filter">
                                 <nb-option [value]=null>Clear Seletion</nb-option>
@@ -21,43 +21,56 @@
                             <nb-option [value]="3">Budget Low to High</nb-option>
                             <nb-option [value]="4">Highest Rating</nb-option>
                           </nb-select>
+                          <nb-select class="button-dropdown-filter" placeholder="professional">
+                            <nb-option [value]=null>Clear Selection</nb-option>
+                            <nb-option [value]="0">Interior Designers</nb-option>
+                            <nb-option [value]="1">Architects</nb-option>
+                            <nb-option [value]="2">Vendors</nb-option>
+                            <nb-option [value]="3">Carpenters</nb-option>
+                          </nb-select>
                     </nb-card-body>
               </nb-card>
         </div>
         <div class="col-md-9 default-card-margin">
             <nb-card>
                 <nb-card-body>
+                    <div>
+                        <h1 class="work-title">How it works?</h1>
+                    </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div>
-                            <p class="step-description">Step 1:</p>
-                            Select the professional of your choice
+                                <p class="icon-fontawesome"><span  class="fa fa-user-o fontawesome-how" aria-hidden="true"></span></p>
                             </div>
-                            
-                            <div class="adjust-image-in-line">
-                                <img class="professional-image" src="../../../assets/images/logo/professional_Image.png">
+                            <div>
+                            <p class="step-description">Step 1</p>
+                            <p>Select the professional of your choice for your interior needs from Urbify.</p>
                             </div>
                             
                         </div>
                         <div class="col-md-4">
-                            <div>
-                                <p class="step-description">Step 2:</p>
-                  Connect with the professional 
+                            <div >
+                            <p class="icon-fontawesome"><span  class="fa fa-handshake-o fontawesome-how" aria-hidden="true"></span></p>
                             </div>
-                  <div class="adjust-image-in-line">
-                    <img class="professional-image" src="../../../assets/images/logo/app-icon.png">
-                  </div>
+                            <div>
+                                <p class="step-description">Step 2</p>
+                                <p>Connect with the professional through Urbify and finalise the deal.</p>
+                            </div>
                   </div>
                         <div class="col-md-4">
-                            <div>
-                                <p class="step-description">Step 3:</p>
-                  Get your work done and rate the professional on the basis of his/her service!
+                            <div >
+                                <p class="icon-fontawesome"><span  class="fa fa-star fontawesome-how" aria-hidden="true">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </span>
+                            </p>
                             </div>
-                            
-                  <div class="adjust-image-in-line">
-                    <img class="professional-image" src="../../../assets/images/logo/rating.png">
-                  </div>
-                  
+                            <div>
+                                <p class="step-description">Step 3</p>
+                            <p>Get your work done and rate/comment the professional on the basis of his/her service!</p>
+                            </div>
                         </div>
                     </div>
                 </nb-card-body>
