@@ -13,9 +13,16 @@ export class AppComponent {
   constructor(public sidebarService:NbSidebarService,public router:Router){}
   
   title = 'urbifyFrontEnd';
-
+  filterBarOpen:Boolean=true;
   collapse() {
-    this.sidebarService.collapse('sideFilterBar');
+    if(this.filterBarOpen === false){
+      this.sidebarService.expand('sideFilterBar');
+      this.filterBarOpen = true;
+    }else{
+      this.filterBarOpen = false;
+      this.sidebarService.collapse('sideFilterBar');
+    }
+    
     return false;
   }
 }
