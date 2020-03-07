@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {NbSidebarService} from '@nebular/theme';
+import {RouterModule,Router} from '@angular/router'; 
+
 
 @Component({
   selector: 'app-root',
@@ -8,8 +10,8 @@ import {NbSidebarService} from '@nebular/theme';
 })
 export class AppComponent {
 
-  constructor(public sidebarService:NbSidebarService){}
-
+  constructor(public sidebarService:NbSidebarService,public router:Router){}
+  
   title = 'urbifyFrontEnd';
 
   collapse() {

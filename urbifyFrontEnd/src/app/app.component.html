@@ -1,14 +1,16 @@
+
+
 <nb-layout>
   <nb-layout-header class="custom-color-menu">
     <app-home-page-header>
-      <nb-icon (click)="collapse()" icon="menu-2-outline"></nb-icon>  
+      
     </app-home-page-header>
     
   </nb-layout-header>
   <!-- <nb-sidebar responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'>
   </nb-sidebar> -->
   <nb-sidebar>
-    <app-side-bar responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'></app-side-bar>
+    <app-side-bar  responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'></app-side-bar>
   </nb-sidebar>
   <nb-layout-column class="colored-column-basic">
     <router-outlet></router-outlet>
