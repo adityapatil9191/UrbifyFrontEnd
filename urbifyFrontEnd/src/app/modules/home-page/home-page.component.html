@@ -1,37 +1,35 @@
 <!-- <app-slider></app-slider> -->
+ 
+    <!-- <nb-sidebar left=true collapsedBreakpoints="['1100','is']" tag='sideFilterBar'>
+        <p>Filters and sorters</p>
+        <nb-icon (click)="collapse()" icon="menu-2-outline"></nb-icon>  
+        
+        <p>Ratings</p>
+                <nb-radio-group [(ngModel)]="selectedRating">
+                    <nb-radio value="1">4 stars and up</nb-radio>
+                    <nb-radio value="2">3 stars and up</nb-radio>
+                    <nb-radio value="3">2 stars and up</nb-radio>
+                    <nb-radio value="4">1 star and up</nb-radio>
+                  </nb-radio-group>
+                  <p>Sort by</p>
+                  <nb-radio-group [(ngModel)]="selectedSorter">
+                    <nb-radio value="1">Newest first</nb-radio>
+                    <nb-radio value="2">Most popular</nb-radio>
+                    <nb-radio value="3">Budget High to Low</nb-radio>
+                    <nb-radio value="4">Budget low to hight</nb-radio>
+                  </nb-radio-group>
+                  <p>Professional</p>
+                  <nb-radio-group [(ngModel)]="selectedProfessional">
+                    <nb-radio value="1">Interior Designers</nb-radio>
+                    <nb-radio value="2">Architects</nb-radio>
+                    <nb-radio value="3">Vendors</nb-radio>
+                    <nb-radio value="4">Carpenters</nb-radio>
+                  </nb-radio-group>
+            </nb-sidebar> -->
+           
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-3 default-card-margin">
-            <nb-card class="tiny" size="tiny">
-                <nb-card-body>
-                        <p class="filter-text-top"><nb-icon  icon="funnel"></nb-icon>Filter</p>
-                            <nb-select class="button-dropdown-filter" placeholder="Filter">
-                                <nb-option [value]=null>Clear Seletion</nb-option>
-                                <nb-option [value]="1">Rating > 4 stars</nb-option>
-                                <nb-option [value]="2">Rating > 4 and < 3 stars</nb-option>
-                                <nb-option [value]="3">Budget < 4,00000</nb-option>
-                                <nb-option [value]="4">Budget > 4,00000</nb-option>
-                                <nb-option [value]="5">Budget > 6,00000</nb-option>
-                              </nb-select>
-                        <nb-select class="button-dropdown-filter" placeholder="Sort By">
-                            <nb-option [value]=null>Clear Selection</nb-option>
-                            <nb-option [value]="0">Newest First</nb-option>
-                            <nb-option [value]="1">Most Popular</nb-option>
-                            <nb-option [value]="2">Budget High to Low</nb-option>
-                            <nb-option [value]="3">Budget Low to High</nb-option>
-                            <nb-option [value]="4">Highest Rating</nb-option>
-                          </nb-select>
-                          <nb-select class="button-dropdown-filter" placeholder="professional">
-                            <nb-option [value]=null>Clear Selection</nb-option>
-                            <nb-option [value]="0">Interior Designers</nb-option>
-                            <nb-option [value]="1">Architects</nb-option>
-                            <nb-option [value]="2">Vendors</nb-option>
-                            <nb-option [value]="3">Carpenters</nb-option>
-                          </nb-select>
-                    </nb-card-body>
-              </nb-card>
-        </div>
-        <div class="col-md-9 default-card-margin">
+        <div class="col-md-12 col-xs-12 col-sm-12 default-card-margin">
             <nb-card>
                 <nb-card-body>
                     <div>
