@@ -1,6 +1,6 @@
 
     <p>Filters and sorters</p>
-    <div>
+    <div class="filter-box">
         Ratings
             <nb-radio-group [(ngModel)]="selectedRating">
                 <nb-radio value="1">4 stars and up</nb-radio>
@@ -10,7 +10,7 @@
               </nb-radio-group>
     </div>
     
-    <div>
+    <div class="filter-box">
         Sort by
               <nb-radio-group [(ngModel)]="selectedSorter">
                 <nb-radio value="1">Newest first</nb-radio>
@@ -20,7 +20,7 @@
               </nb-radio-group>
     </div>
     
-    <div>
+    <div class="filter-box">
         Professional
               <nb-radio-group [(ngModel)]="selectedProfessional">
                 <nb-radio value="1">Interior Designers</nb-radio>
