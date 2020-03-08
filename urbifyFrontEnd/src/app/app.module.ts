@@ -9,6 +9,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomePageHeaderModule } from './core/headers/home-page-header/home-page-header.module';
 import { SideBarModule } from './shared/side-bar/side-bar.module';
 import { ModalDialogueModule } from './shared/modal-dialogue/modal-dialogue.module';
+import {HttpClientModule} from '@angular/common/http';
+import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 
 
 @NgModule({
@@ -25,10 +27,12 @@ import { ModalDialogueModule } from './shared/modal-dialogue/modal-dialogue.modu
     BrowserAnimationsModule,
     NbSidebarModule.forRoot(),
     NbDialogModule.forRoot(),
-    NbThemeModule.forRoot({ name: 'corporate' }),
+    NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
     NbEvaIconsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NbAuthModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

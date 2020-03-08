@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <nb-card-back>
       <nb-card class="login-card" size="small">
@@ -8,10 +8,11 @@
           </p>
       </nb-card-header>
         <nb-card-body>
-          <form (ngSubmit)="login()"  aria-labelledby="title">
-            <div class="form-control-group">
+          <form [formGroup]="loginForm" (ngSubmit)="login()"  aria-labelledby="title">
+            <div [ngClass]="{'has-error':loginForm.get('email').errors && loginForm.get('email').dirty 
+            || loginForm.get('email').touched }" class="form-control-group">
               <label class="label" for="input-email">Email address:</label>
-              <input nbInput
+              <input nbInput formControlName="email"
               fullWidth
               name="email"
               id="input-email"
@@ -21,7 +22,7 @@
             </div>  
             <div class="form-control-group">
               <label class="label" for="input-password">Password:</label>
-              <input nbInput
+              <input nbInput formControlName="password"
                      fullWidth
                      name="password"
                      type="password"
@@ -57,10 +58,8 @@
           <section class="another-action" aria-label="Register">
             Don't have an account? <a class="text-link" routerLink="../register">Register</a>
           </section>
-
-            
         </nb-card-body>
       </nb-card>
     </nb-card-back>
   </div>
-  </div> 
+  </div>  -->

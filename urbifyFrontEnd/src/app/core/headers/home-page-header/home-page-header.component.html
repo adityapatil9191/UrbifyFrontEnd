@@ -12,7 +12,7 @@
 <div class="header-container float-right">
   <nb-actions size="medium">
     <nb-action >
-        <a (click)="loginProfessional()"><p class="professional-login-font" >Professional Login/Register</p></a>
+        <a class="professional-login-font" [routerLink]="['/auth/login']" >Professional Login/Register</a>
     </nb-action>
     <nb-action icon="person-outline"></nb-action>
   </nb-actions>
