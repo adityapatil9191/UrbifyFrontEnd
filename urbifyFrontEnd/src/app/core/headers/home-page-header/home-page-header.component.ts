@@ -13,7 +13,7 @@ export class HomePageHeaderComponent implements OnInit {
   loginProfessional(){
     this.dialogService.open(ProfessionalLoginComponent, {
       context: {
-        title: 'This is a title passed to the dialog component',
+        title: 'Login',
       },
     });
   }
