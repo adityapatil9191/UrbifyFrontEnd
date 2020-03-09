@@ -8,9 +8,9 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbIconModule, NbDialogM
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomePageHeaderModule } from './core/headers/home-page-header/home-page-header.module';
 import { SideBarModule } from './shared/side-bar/side-bar.module';
-import { ModalDialogueModule } from './shared/modal-dialogue/modal-dialogue.module';
 import {HttpClientModule} from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+
 
 
 @NgModule({
@@ -22,7 +22,6 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     AppRoutingModule,
     SideBarModule,
     NbIconModule,
-    ModalDialogueModule,
     HomePageHeaderModule,
     BrowserAnimationsModule,
     NbSidebarModule.forRoot(),
@@ -32,7 +31,15 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     NbEvaIconsModule,
     FormsModule,
     HttpClientModule,
-    NbAuthModule.forRoot()
+    NbAuthModule.forRoot(),
+    NbAuthModule.forRoot({
+      strategies: [
+        NbPasswordAuthStrategy.setup({
+          name: 'email',
+        }),
+      ],
+      forms: {},
+    }), 
   ],
   providers: [],
   bootstrap: [AppComponent]

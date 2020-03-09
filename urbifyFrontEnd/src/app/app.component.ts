@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {NbSidebarService} from '@nebular/theme';
 import {RouterModule,Router} from '@angular/router'; 
+import { of } from 'rxjs';
 
 
 @Component({
@@ -9,11 +10,11 @@ import {RouterModule,Router} from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  constructor(public sidebarService:NbSidebarService,public router:Router){}
-  
   title = 'urbifyFrontEnd';
   filterBarOpen:Boolean=true;
+  constructor(public sidebarService:NbSidebarService,public router:Router){}
+  
+
   collapse() {
     if(this.filterBarOpen === false){
       this.sidebarService.expand('sideFilterBar');

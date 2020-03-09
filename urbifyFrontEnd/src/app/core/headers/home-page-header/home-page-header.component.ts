@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NbDialogService } from '@nebular/theme';
-import { ProfessionalLoginComponent } from 'src/app/shared/modal-dialogue/professional-login/professional-login.component';
 
 @Component({
   selector: 'app-home-page-header',
@@ -9,14 +8,7 @@ import { ProfessionalLoginComponent } from 'src/app/shared/modal-dialogue/profes
 })
 export class HomePageHeaderComponent implements OnInit {
   constructor(private dialogService: NbDialogService) {}
-    
-  loginProfessional(){
-    this.dialogService.open(ProfessionalLoginComponent, {
-      context: {
-        title: 'Login',
-      },
-    });
-  }
+   
   
   ngOnInit() {}
 
