@@ -8,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class SideBarComponent implements OnInit {
 
   constructor() { }
-
+  selectedRating;
+  selectedSorter;
+  selectedProfessional;
   ngOnInit() {
   }
 

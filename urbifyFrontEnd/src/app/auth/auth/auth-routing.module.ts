@@ -3,6 +3,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NbAuthComponent } from '@nebular/auth';
 import { LoginComponent } from './login/login.component';
+import { RegisterProfessionalComponent } from './register-professional/register-professional.component';
+import { RegisterProfessionalPagetwoComponent } from './register-professional-pagetwo/register-professional-pagetwo.component';
 
 export const routes:Routes=[
 {
@@ -12,6 +14,14 @@ export const routes:Routes=[
     {
       path:'login',
       component:LoginComponent,
+    },
+    {
+      path:'register',
+      component:RegisterProfessionalComponent,
+    },
+    {
+      path:'registertwo',
+      component:RegisterProfessionalPagetwoComponent
     }
   ]
 }

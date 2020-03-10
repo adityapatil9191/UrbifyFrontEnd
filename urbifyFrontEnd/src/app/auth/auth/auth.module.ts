@@ -7,11 +7,13 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
 import { NbButtonModule, NbAlertModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
-
+import { RegisterProfessionalComponent } from './register-professional/register-professional.component';
+import { NbIconModule } from '@nebular/theme';
+import { RegisterProfessionalPagetwoComponent } from './register-professional-pagetwo/register-professional-pagetwo.component';
 
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [LoginComponent, RegisterProfessionalComponent, RegisterProfessionalPagetwoComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -21,7 +23,7 @@ import { LoginComponent } from './login/login.component';
     NbButtonModule,
     NbCheckboxModule,
     AuthRoutingModule,
-
+    NbIconModule,
     NbAuthModule,
   ]
 })
