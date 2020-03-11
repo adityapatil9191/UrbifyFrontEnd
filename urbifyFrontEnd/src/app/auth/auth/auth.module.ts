@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
 import { AuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
 import { NbButtonModule, NbAlertModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
@@ -18,6 +17,7 @@ import { RegisterProfessionalPagetwoComponent } from './register-professional-pa
     CommonModule,
     FormsModule,
     RouterModule,
+    ReactiveFormsModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
