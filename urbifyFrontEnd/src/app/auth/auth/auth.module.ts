@@ -9,7 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterProfessionalComponent } from './register-professional/register-professional.component';
 import { NbIconModule } from '@nebular/theme';
 import { RegisterProfessionalPagetwoComponent } from './register-professional-pagetwo/register-professional-pagetwo.component';
-
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 @NgModule({
   declarations: [LoginComponent, RegisterProfessionalComponent, RegisterProfessionalPagetwoComponent],
@@ -25,6 +25,7 @@ import { RegisterProfessionalPagetwoComponent } from './register-professional-pa
     AuthRoutingModule,
     NbIconModule,
     NbAuthModule,
+    NgxIntlTelInputModule,
   ]
 })
 export class AuthModule { }
