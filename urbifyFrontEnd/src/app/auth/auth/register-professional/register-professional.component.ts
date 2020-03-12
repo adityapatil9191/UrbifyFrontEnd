@@ -20,16 +20,18 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     super(service,options,cd,router);
   }
   professionalRegisterForm;
+  fvalue
   ngOnInit() {
     this.professionalRegisterForm = this.fb.group({
       fullname : ['',[Validators.required]],
       emailId : ['',[Validators.required,Validators.email]],
-      experience: ['',Validators.required],
+      experience: ['',[Validators.required,Validators.pattern("^[0-9]*$")]],
       password: ['',Validators.required],
       repeatPassword:['',Validators.required]
     },
     { validator: this.matchingPasswords('password', 'repeatPassword')}
     );
+    this.fvalue = this.professionalRegisterForm.controls; 
   }
 
   matchingPasswords(passwordKey: string, confirmPasswordKey: string) {
