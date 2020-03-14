@@ -4,7 +4,8 @@
 
 .projects--item, .projects--new-project-button, .projects--premium-link {
   width: calc(100%);
-  height: 240px;
+  height: auto;
+  max-height: 240px;
 }
 
 .box-with-photos {
