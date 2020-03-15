@@ -30,6 +30,7 @@ export class RegisterProfessionalPagetwoComponent extends NbRegisterComponent {
     this.professionalRegisterForm = this.fb.group({
       degree:['',Validators.required],
       about:['',Validators.required],
+      file:[''],
       phnNumber:['',[Validators.required, Validators.pattern("^[0-9]*$")]],
       fbLink:[''],
       instaLink:[''],

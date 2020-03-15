@@ -17,7 +17,7 @@
 
 <form (ngSubmit)="register()" [formGroup]="professionalRegisterForm" aria-labelledby="title">
   <div class="form-control-group">
-    <label class="label" for="input-name">Degree/Certification:</label>
+    <label class="label" for="input-degree">Degree/Certification:</label>
     <input nbInput formControlName = "degree" id="input-degree" name="degree" placeholder="Degree/Certification" autofocus fullWidth  fieldSize="large">
     <span *ngIf="(fvalue.degree.invalid)  && fvalue.degree.touched || fvalue.degree.dirty">
       <span *ngIf="fvalue.degree.errors?.required" class="caption status-danger">
@@ -41,7 +41,7 @@
 
   
   <div class="form-control-group">
-    <label class="label" for="input-name">Tell Us About Yourself:</label>
+    <label class="label" for="input-intro">Tell Us About Yourself:</label>
     <textarea nbInput fullWidth formControlName = "about" id="input-about" name="about" placeholder="About Yourself" autofocus fullWidth  fieldSize="large"></textarea>
     <span *ngIf="(fvalue.about.invalid)  && fvalue.about.touched || fvalue.about.dirty">
       <span *ngIf="fvalue.about.errors?.required" class="caption status-danger">
@@ -49,6 +49,17 @@
       </span>
     </span>
   </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-file">Upload your profile picture:</label>
+    <input type="file" nbInput fullWidth formControlName = "file" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-file">Upload your background Image:</label>
+    <input type="file" nbInput fullWidth formControlName = "file" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
+  </div>
+
 
   <div class="form-control-group">
     <label class="label" for="input-name">FaceBook Link:</label>
