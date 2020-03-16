@@ -1,0 +1,14 @@
+<nb-stepper  orientation="horizontal">
+  <nb-step label="Register Yourself" [stepControl]="professionalRegisterFormOne">
+      <app-register-professional (sendFormValues) = "firstFormValues($event)"></app-register-professional>
+  </nb-step>
+  <nb-step label="More about yourself">
+      <app-register-professional-pagetwo (formTwoValues) = "secondFormValues($event)"></app-register-professional-pagetwo>
+  </nb-step>
+  <nb-step label="Add Your Projects" >
+    <app-add-projects></app-add-projects>
+  </nb-step>
+  <nb-step label="Terms And Conditions">
+
+  </nb-step>
+</nb-stepper>

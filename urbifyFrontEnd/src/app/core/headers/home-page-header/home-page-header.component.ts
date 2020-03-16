@@ -8,8 +8,6 @@ import { NbDialogService } from '@nebular/theme';
 })
 export class HomePageHeaderComponent implements OnInit {
   constructor(private dialogService: NbDialogService) {}
-   
-  
   ngOnInit() {}
 
 }

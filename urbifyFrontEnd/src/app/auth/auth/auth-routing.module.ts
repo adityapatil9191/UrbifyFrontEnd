@@ -3,35 +3,30 @@ import {RouterModule, Routes} from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NbAuthComponent } from '@nebular/auth';
 import { LoginComponent } from './login/login.component';
-import { RegisterProfessionalComponent } from './register-professional/register-professional.component';
-import { RegisterProfessionalPagetwoComponent } from './register-professional-pagetwo/register-professional-pagetwo.component';
+import { RegistrationStepperComponent } from './registration-stepper/registration-stepper.component';
 
-export const routes:Routes=[
+export const routes: Routes = [
 {
-  path:'',
-  component:NbAuthComponent,
-  children:[
-    {
-      path:'login',
-      component:LoginComponent,
-    },
-    {
-      path:'register',
-      component:RegisterProfessionalComponent,
-    },
-    {
-      path:'registertwo',
-      component:RegisterProfessionalPagetwoComponent
-    }
-  ]
-}
-]
+  path: '',
+  component: NbAuthComponent,
+  children: [
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: 'register',
+        component: RegistrationStepperComponent,
+      }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)],
-    exports:[RouterModule]
+    exports: [ RouterModule ]
 })
 export class AuthRoutingModule { }

@@ -24,7 +24,6 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     NbIconModule,
     HomePageHeaderModule,
     BrowserAnimationsModule,
-    NbSidebarModule.forRoot(),
     NbDialogModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
     NbLayoutModule,
@@ -38,7 +37,7 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
         }),
       ],
       forms: {},
-    }), 
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

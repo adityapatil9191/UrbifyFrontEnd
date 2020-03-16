@@ -1,22 +1,30 @@
+import { HomePageHeaderModule } from './../../core/headers/home-page-header/home-page-header.module';
+import { SideBarModule } from './../../shared/side-bar/side-bar.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page.component';
 import { Route, RouterModule, Routes } from '@angular/router';
-import { NbLayoutModule, NbSidebarModule, NbRadioModule } from '@nebular/theme';
+import { NbLayoutModule, NbSidebarModule, NbRadioModule, NbActionsModule } from '@nebular/theme';
 import { SliderModule } from 'src/app/shared/slider/slider.module';
 import {NbIconModule} from '@nebular/theme';
 import {NbCardModule} from '@nebular/theme';
 import {NbSelectModule} from '@nebular/theme';
 import {NbPopoverModule} from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
+import { HowItWorksComponent } from './how-it-works/how-it-works.component';
+import { HomePageHeaderComponent } from 'src/app/core/headers/home-page-header/home-page-header.component';
+
 
 const routes: Routes = [
   { path: '', component: HomePageComponent}
 ];
 
 @NgModule({
-  declarations: [HomePageComponent],
+  declarations: [HomePageComponent, HowItWorksComponent, HomePageHeaderComponent ],
   imports: [
+    NbActionsModule,
+    SideBarModule,
+    HomePageHeaderModule,
     CommonModule,
     NbLayoutModule,
     SliderModule,
@@ -27,6 +35,7 @@ const routes: Routes = [
     NbSidebarModule,
     FormsModule,
     NbRadioModule,
+    NbSidebarModule.forRoot(),
     RouterModule.forChild(routes)
   ],
   exports: [
@@ -34,5 +43,5 @@ const routes: Routes = [
   ]
 })
 export class HomePageModule {
-  
+
  }

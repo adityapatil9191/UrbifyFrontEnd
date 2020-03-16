@@ -14,7 +14,7 @@ import { FormsModule } from '@angular/forms';
     NbIconModule,
     FormsModule
   ],
-  exports:[
+  exports: [
     SideBarComponent,
   ]
 })

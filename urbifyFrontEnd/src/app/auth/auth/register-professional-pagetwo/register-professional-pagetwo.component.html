@@ -1,4 +1,4 @@
-  
+
 <h1 id="title" class="title">Register</h1>
 
 <nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
@@ -39,7 +39,7 @@
     </span>
   </div>
 
-  
+
   <div class="form-control-group">
     <label class="label" for="input-intro">Tell Us About Yourself:</label>
     <textarea nbInput fullWidth formControlName = "about" id="input-about" name="about" placeholder="About Yourself" autofocus fullWidth  fieldSize="large"></textarea>
@@ -52,12 +52,12 @@
 
   <div class="form-control-group">
     <label class="label" for="input-file">Upload your profile picture:</label>
-    <input type="file" nbInput fullWidth formControlName = "file" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
+    <input type="file" nbInput fullWidth formControlName = "fileProfilePic" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-file">Upload your background Image:</label>
-    <input type="file" nbInput fullWidth formControlName = "file" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
+    <input type="file" nbInput fullWidth formControlName = "fileBackgroundImage" id="input-image" name="input-image"  autofocus fullWidth  fieldSize="large">
   </div>
 
 
@@ -75,7 +75,7 @@
     <label class="label" for="input-name">LinkedIn Link:</label>
     <input nbInput formControlName = "linkedInLink" id="input-linkedInLink" name="linkedInLink" placeholder="linkedInLink link" autofocus fullWidth  fieldSize="large">
   </div>
-  
+
   <!-- <div class="form-control-group">
     <label class="label" for="input-email">FaceBook Link</label>
     <input nbInput formControlName="facebook" id="input-email" name="facebook" placeholder="Email address" fullWidth fieldSize="large" required>
@@ -128,8 +128,8 @@
     </span>
   </div> -->
 
-  
-  
+
+
   <!-- <div class="form-control-group accept-group" *ngIf="getConfigValue('forms.register.terms')">
     <nb-checkbox name="terms" [(ngModel)]="user.terms" [required]="getConfigValue('forms.register.terms')">
       Agree to <a href="#" target="_blank"><strong>Terms & Conditions</strong></a>
