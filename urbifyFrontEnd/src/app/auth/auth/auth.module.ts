@@ -1,3 +1,4 @@
+import { DragDropComponent } from './../../shared/drag-drop/drag-drop.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +13,7 @@ import { RegisterProfessionalPagetwoComponent } from './register-professional-pa
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { RegistrationStepperComponent } from './registration-stepper/registration-stepper.component';
 import { AddProjectsComponent } from './add-projects/add-projects.component';
+import { DragDropDirective } from 'src/app/shared/drag-drop.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AddProjectsComponent } from './add-projects/add-projects.component';
     RegisterProfessionalComponent,
     RegisterProfessionalPagetwoComponent,
     RegistrationStepperComponent,
-    AddProjectsComponent
+    AddProjectsComponent,
+    DragDropDirective,
+    DragDropComponent
   ],
   imports: [
     CommonModule,

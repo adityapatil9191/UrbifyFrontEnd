@@ -20,6 +20,9 @@ export class RegistrationStepperComponent implements OnInit {
   secondFormValues(e) {
     console.log(e);
   }
+  getUploadedFiles(e){
+    console.log(e);
+  }
   ngOnInit() {
   }
 
