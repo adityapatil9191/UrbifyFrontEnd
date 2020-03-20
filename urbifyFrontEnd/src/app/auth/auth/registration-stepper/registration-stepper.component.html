@@ -6,7 +6,7 @@
       <app-register-professional-pagetwo (formTwoValues) = "secondFormValues($event)"></app-register-professional-pagetwo>
   </nb-step>
   <nb-step label="Add Your Projects" >
-    <app-add-projects (sendUploadedFiles)="getUploadedFiles()"></app-add-projects>
+    <app-add-projects (registerProjectFormValues) = "getFilesFromAddProjects($event)"></app-add-projects>
   </nb-step>
   <nb-step label="Terms And Conditions">
 

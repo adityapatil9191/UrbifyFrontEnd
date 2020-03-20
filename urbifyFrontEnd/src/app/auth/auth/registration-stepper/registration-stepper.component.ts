@@ -1,5 +1,7 @@
+import { FileSharingService } from './../../../shared/file-sharing.service';
 import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { CompileShallowModuleMetadata } from '@angular/compiler';
 
 @Component({
   selector: 'app-registration-stepper',
@@ -9,10 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class RegistrationStepperComponent implements OnInit {
   linearMode = true;
   professionalRegisterFormOne: FormGroup;
+  imageFiles;
   toggleLinearMode() {
     this.linearMode = !this.linearMode;
   }
-  constructor() { }
+  constructor(private fileSharing: FileSharingService) { }
 
   firstFormValues(e) {
     console.log(e);
@@ -20,9 +23,13 @@ export class RegistrationStepperComponent implements OnInit {
   secondFormValues(e) {
     console.log(e);
   }
-  getUploadedFiles(e){
+
+  getFilesFromAddProjects(e) {
     console.log(e);
+    console.log(this.fileSharing.getFiles());
+    return;
   }
+
   ngOnInit() {
   }
 

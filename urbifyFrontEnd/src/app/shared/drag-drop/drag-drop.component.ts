@@ -1,3 +1,4 @@
+import { FileSharingService } from './../file-sharing.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -8,20 +9,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class DragDropComponent implements OnInit {
 
   files: any = [];
-  @Output() sendUploadedFiles =  new EventEmitter();
 
   uploadFile(event) {
     for (let index = 0; index < event.length; index++) {
       const element = event[index];
       this.files.push(element.name);
-      this.sendUploadedFiles.emit(this.files.push);
+      this.fileSharing.sendFiles(this.files);
     }
   }
   deleteAttachment(index) {
     this.files.splice(index, 1);
   }
 
-  constructor() { }
+  constructor(private fileSharing: FileSharingService) { }
 
   ngOnInit() {
   }

@@ -58,17 +58,21 @@
 
   <div class="form-control-group">
     <label class="label" for="input-project-images">Please upload project images:</label>
-    <app-drag-drop  id="input-project-images" name="projectImages" placeholder="Project Images" autofocus fullWidth  fieldSize="large"></app-drag-drop>
+    <app-drag-drop   id="input-project-images" name="projectImages" placeholder="Project Images" autofocus fullWidth  fieldSize="large"></app-drag-drop>
     <span *ngIf="(fvalue.projectPeriod.invalid)  && fvalue.projectPeriod.touched || fvalue.projectPeriod.dirty">
       <span *ngIf="fvalue.projectPeriod.errors?.required" class="caption status-danger">
-        Please enter project period.
+        Upload Project images!.
       </span>
     </span>
   </div>
-  
+
+
+
+
   <button nbButton
           fullWidth
-          (click)="addAnotherProject()"
+          type="button"
+          (click) = "addAnotherProject()"
           status="primary"
           size="large"
           [disabled]="submitted || !projectRegisterForm.valid"
