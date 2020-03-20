@@ -14,6 +14,7 @@ import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { RegistrationStepperComponent } from './registration-stepper/registration-stepper.component';
 import { AddProjectsComponent } from './add-projects/add-projects.component';
 import { DragDropDirective } from 'src/app/shared/drag-drop.directive';
+import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DragDropDirective } from 'src/app/shared/drag-drop.directive';
     RegistrationStepperComponent,
     AddProjectsComponent,
     DragDropDirective,
-    DragDropComponent
+    DragDropComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     CommonModule,

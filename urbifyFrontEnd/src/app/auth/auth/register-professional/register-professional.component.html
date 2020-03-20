@@ -78,14 +78,6 @@
     </span>
   </div>
 
-
-
-  <!-- <div class="form-control-group accept-group" *ngIf="getConfigValue('forms.register.terms')">
-    <nb-checkbox name="terms" [(ngModel)]="user.terms" [required]="getConfigValue('forms.register.terms')">
-      Agree to <a href="#" target="_blank"><strong>Terms & Conditions</strong></a>
-    </nb-checkbox>
-  </div>
- -->
   <button nbButton
           fullWidth
           status="primary"
@@ -96,29 +88,6 @@
   </button>
 </form>
 
-<!-- <section *ngIf="socialLinks && socialLinks.length > 0" class="links" aria-label="Social sign in">
-  or enter with:
-  <div class="socials">
-    <ng-container *ngFor="let socialLink of socialLinks">
-      <a *ngIf="socialLink.link"
-         [routerLink]="socialLink.link"
-         [attr.target]="socialLink.target"
-         [attr.class]="socialLink.icon"
-         [class.with-icon]="socialLink.icon">
-        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
-        <ng-template #title>{{ socialLink.title }}</ng-template>
-      </a>
-      <a *ngIf="socialLink.url"
-         [attr.href]="socialLink.url"
-         [attr.target]="socialLink.target"
-         [attr.class]="socialLink.icon"
-         [class.with-icon]="socialLink.icon">
-        <nb-icon *ngIf="socialLink.icon; else title" [icon]="socialLink.icon"></nb-icon>
-        <ng-template #title>{{ socialLink.title }}</ng-template>
-      </a>
-    </ng-container>
-  </div>
-</section> -->
 
 <section class="another-action" aria-label="Sign in">
   Already have an account? <a class="text-link" routerLink="/auth/login">Log in</a>
