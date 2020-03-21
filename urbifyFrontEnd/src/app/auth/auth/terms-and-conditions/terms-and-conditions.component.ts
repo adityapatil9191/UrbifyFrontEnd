@@ -2,6 +2,8 @@ import { Component, OnInit, ChangeDetectorRef, Inject } from '@angular/core';
 import { NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS } from '@nebular/auth';
 import { Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
+import { NbDialogService } from '@nebular/theme';
+import { ModalPopUpComponent } from 'src/app/shared/modal-pop-up/modal-pop-up/modal-pop-up.component';
 
 @Component({
   selector: 'app-terms-and-conditions',
@@ -16,7 +18,8 @@ export class TermsAndConditionsComponent extends NbRegisterComponent implements 
     @Inject(NB_AUTH_OPTIONS) protected options = {},
     protected cd: ChangeDetectorRef,
     protected router: Router,
-    protected fb: FormBuilder
+    protected fb: FormBuilder,
+    private dialogService: NbDialogService
     ) {
       super(service, options, cd, router);
     }
@@ -28,6 +31,9 @@ export class TermsAndConditionsComponent extends NbRegisterComponent implements 
       }
     }
 
+    open() {
+      this.dialogService.open(ModalPopUpComponent, { context: 'this is some additional data passed to dialog' });
+    }
   ngOnInit() {
     this.termsAndConditions = this.fb.group({
       agreeTermsAndConditions: ['', Validators.required]

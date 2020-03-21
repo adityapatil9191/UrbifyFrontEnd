@@ -1,3 +1,4 @@
+import { ModalPopUpModule } from './../../shared/modal-pop-up/modal-pop-up.module';
 import { DragDropComponent } from './../../shared/drag-drop/drag-drop.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -5,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './auth-routing.module';
 import { NbAuthModule } from '@nebular/auth';
-import { NbButtonModule, NbAlertModule, NbCheckboxModule, NbInputModule, NbStepperModule } from '@nebular/theme';
+import { NbButtonModule, NbAlertModule, NbCheckboxModule, NbInputModule, NbStepperModule, NbDialogModule } from '@nebular/theme';
 import { LoginComponent } from './login/login.component';
 import { RegisterProfessionalComponent } from './register-professional/register-professional.component';
 import { NbIconModule } from '@nebular/theme';
@@ -40,7 +41,9 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     AuthRoutingModule,
     NbIconModule,
     NbAuthModule,
+    ModalPopUpModule,
     NgxIntlTelInputModule,
+    NbDialogModule.forChild()
   ]
 })
 export class AuthModule { }

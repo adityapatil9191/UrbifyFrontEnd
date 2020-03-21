@@ -48,12 +48,13 @@
 
   <div class="form-control-group accept-group" >
     <nb-checkbox formControlName="agreeTermsAndConditions" (change) = "changeCheckBox($event)" name="terms">
-      Agree to <a href="#" target="_blank"><strong>Terms & Conditions</strong></a>
+      Agree to <strong>Terms & Conditions</strong>
     </nb-checkbox>
   </div>
 
   <button nbButton
           fullWidth
+          (click) = "open()"
           status="primary"
           size="large"
           [disabled]= "submitted || !termsAndConditions.valid || checkBoxChecked"
