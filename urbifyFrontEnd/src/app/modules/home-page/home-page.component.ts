@@ -1,5 +1,6 @@
+import { GetFreeQuoteComponent } from './../../shared/get-free-quote/get-free-quote/get-free-quote.component';
 import { Component, OnInit } from '@angular/core';
-import { NbSidebarService } from '@nebular/theme';
+import { NbSidebarService, NbWindowService } from '@nebular/theme';
 import { Router } from '@angular/router';
 
 
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
   title = 'urbifyFrontEnd';
   filterBarOpen = true;
-  constructor(public sidebarService: NbSidebarService, public router: Router) { }
+  constructor(public sidebarService: NbSidebarService, public router: Router, public windowService: NbWindowService) { }
   collapse() {
     if (this.filterBarOpen === false) {
       this.sidebarService.expand('sideFilterBar');
@@ -22,5 +23,7 @@ export class HomePageComponent implements OnInit {
     }
     return false;
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.windowService.open(GetFreeQuoteComponent, {title: `Get Free Quote`});
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, Inject, Output, EventEmitter } from '@angular/core';
 import {NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
 import { Router } from '@angular/router';
-import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-register-professional',
