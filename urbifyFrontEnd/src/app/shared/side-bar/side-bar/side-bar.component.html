@@ -1,0 +1,35 @@
+
+    <p>Filters and sorters</p>
+    <div class="filter-box">
+        Ratings
+            <nb-radio-group [(ngModel)]="selectedRating">
+                <nb-radio value="1">4 stars and up</nb-radio>
+                <nb-radio value="2">3 stars and up</nb-radio>
+                <nb-radio value="3">2 stars and up</nb-radio>
+                <nb-radio value="4">1 star and up</nb-radio>
+              </nb-radio-group>
+    </div>
+    
+    <div class="filter-box">
+        Sort by
+              <nb-radio-group [(ngModel)]="selectedSorter">
+                <nb-radio value="1">Newest first</nb-radio>
+                <nb-radio value="2">Most popular</nb-radio>
+                <nb-radio value="3">Budget High to Low</nb-radio>
+                <nb-radio value="4">Budget low to hight</nb-radio>
+              </nb-radio-group>
+    </div>
+    
+    <div class="filter-box">
+        Professional
+              <nb-radio-group [(ngModel)]="selectedProfessional">
+                <nb-radio value="1">Interior Designers</nb-radio>
+                <nb-radio value="2">Architects</nb-radio>
+                <nb-radio value="3">Vendors</nb-radio>
+                <nb-radio value="4">Carpenters</nb-radio>
+              </nb-radio-group>
+
+    </div>
+    
+              
+              

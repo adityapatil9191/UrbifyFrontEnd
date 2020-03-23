@@ -1,13 +1,17 @@
-<div class="container">
-  <div class="row mt-4">
-    <div class="col-sm">
-      <app-professionals-card></app-professionals-card>
-    </div>
-    <div class="col-sm">
-      <app-professionals-card></app-professionals-card>
-    </div>
-    <div class="col-sm">
-      <app-professionals-card></app-professionals-card>
-    </div>
-  </div>
-</div>
+<nb-layout>
+  <nb-layout-header>
+    <nb-icon icon="menu-2-outline" (click)="collapse()"></nb-icon>
+    <app-home-page-header class="header-straight-line">
+
+    </app-home-page-header>
+  </nb-layout-header>
+  <!-- <nb-sidebar responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'>
+  </nb-sidebar> -->
+  <nb-sidebar class="page-layout">
+    <app-side-bar  responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'></app-side-bar>
+  </nb-sidebar>
+  <nb-layout-column class="colored-column-basic">
+    <app-how-it-works></app-how-it-works>
+  </nb-layout-column>
+  <nb-layout-footer> Footer</nb-layout-footer>
+</nb-layout>

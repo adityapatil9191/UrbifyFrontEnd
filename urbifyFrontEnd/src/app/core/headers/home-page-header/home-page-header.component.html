@@ -3,7 +3,7 @@
         <div class="logo pt-2">
           <h1>
             <a href="/" title="urbify Home page">
-                <img src="../../../../assets/images/logo/urbifyLogo.png">
+                <img class="logo-radius" src="../../../../assets/images/logo/urbifyLogo.png">
             </a>
           </h1>
         </div>
@@ -11,9 +11,10 @@
 </div>
 <div class="header-container float-right">
   <nb-actions size="medium">
-    <nb-action>
-        Professionals Login
+    <nb-action >
+        <a class="professional-login-font" [routerLink]="['/auth/login']" >Professional Login/Register</a>
     </nb-action>
     <nb-action icon="person-outline"></nb-action>
   </nb-actions>
 </div>
+

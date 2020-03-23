@@ -1,0 +1,68 @@
+
+<h1 id="title" class="title">Terms And Conditions</h1>
+
+<nb-alert *ngIf="showMessages.error && errors?.length && !submitted" outline="danger" role="alert">
+  <p class="alert-title"><b>Oh snap!</b></p>
+  <ul class="alert-message-list">
+    <li *ngFor="let error of errors" class="alert-message">{{ error }}</li>
+  </ul>
+</nb-alert>
+
+<nb-alert *ngIf="showMessages.success && messages?.length && !submitted" outline="success" role="alert">
+  <p class="alert-title"><b>Hooray!</b></p>
+  <ul class="alert-message-list">
+    <li *ngFor="let message of messages" class="alert-message">{{ message }}</li>
+  </ul>
+</nb-alert>
+
+<form (ngSubmit)="register()" [formGroup]= "termsAndConditions" aria-labelledby="title">
+  <div class="form-control-group">
+    <p>
+      1) You accept that Urbify is a platform for you to connect with potential clients and you are solely responsible for your services.
+    </p>
+    <p>
+      2) Neither Urbify nor its employees are responsible for any descrepancies between you and the client post deal finalization or when the project is complete.
+    </p>
+    <p>
+      3) You are expected to give satisfactory service to your clients. This will help us as well as you to grow our businesses.
+    </p>
+    <p>
+      4) We have the right to terminate/remove your profile from our portal without any justification.
+    </p>
+    <p>
+      5) You agree to share X% of your fees with Urbify after the deal has been finalized. The payment has to be done in advance so that we can process with the project.
+    </p>
+    <p>
+      6) Urbify is not responsible for the vendors that you choose for your clients. It is solely your choice and you are expected to resolve any descrepancies/disputes between you and the vendors.
+    </p>
+    <p>
+      7) You are expected to strictly adhere to client budgets and timelines.
+    </p>
+    <p>
+      8) Please note that we wish to keep only authentic profiles on Urbify. Urbify would have to perform some background checks to make sure that only authentic and reliable profiles exist on Urbify.
+      By clicking on the below check box you agree to all the above terms and conditions and allow us to perform background verification. Your data will be protected and used only when required for background checks or connecting you with the clients.
+    </p>
+  </div>
+
+
+
+  <div class="form-control-group accept-group" >
+    <nb-checkbox formControlName="agreeTermsAndConditions" (change) = "changeCheckBox($event)" name="terms">
+      Agree to <strong>Terms & Conditions</strong>
+    </nb-checkbox>
+  </div>
+
+  <button nbButton
+          fullWidth
+          (click) = "open()"
+          status="primary"
+          size="large"
+          [disabled]= "submitted || !termsAndConditions.valid || checkBoxChecked"
+          [class.btn-pulse]= "submitted">
+    Create My Profile
+  </button>
+</form>
+
+<section class="another-action" aria-label="Sign in">
+  Already have an account? <a class="text-link" routerLink="/auth/login">Log in</a>
+</section>

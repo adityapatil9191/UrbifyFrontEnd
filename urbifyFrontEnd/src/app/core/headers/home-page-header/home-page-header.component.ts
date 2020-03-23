@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NbDialogService } from '@nebular/theme';
 
 @Component({
   selector: 'app-home-page-header',
@@ -6,9 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page-header.component.scss']
 })
 export class HomePageHeaderComponent implements OnInit {
-  constructor(
-  ) {}
-
+  constructor(private dialogService: NbDialogService) {}
   ngOnInit() {}
 
 }
