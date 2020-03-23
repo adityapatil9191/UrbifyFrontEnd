@@ -1,0 +1,111 @@
+.projects--item, .projects--new-project-button, .projects--premium-link {
+  width: calc(33.33333% - 24px - 1px);
+}
+
+.projects--item, .projects--new-project-button, .projects--premium-link {
+  width: calc(100%);
+  height: auto;
+  max-height: 240px;
+}
+
+.box-with-photos {
+  padding: 0px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: 3fr 2fr;
+  grid-template-columns: 3fr 2fr;
+  background-color: #fff;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  overflow: hidden;
+}
+
+.box-with-photos, .box-with-photos .photo, .box-with-photos img {
+  height: 100%;
+  width: 100%;
+}
+
+.box-with-photos, .box-with-photos .photo, .box-with-photos img {
+  height: 100%;
+  width: 100%;
+  transition: box-shadow .2s;
+}
+
+.-box-photo-1-of-3 {
+  grid-row: 1/span 2;
+  grid-column: 1/span 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+}
+
+.-box-photo-2-of-3 {
+  grid-row: 1/span 1;
+  grid-column: 2/span 1;
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+}
+
+.-box-photo-1-of-1, .-box-photo-1-of-3, .-box-photo-2-of-3, .-box-photo-3-of-3, .ideabook--ib-container .-photo-overlay, .ideabook--ib-container .-photo-photo {
+  display: block;
+  overflow: hidden;
+}
+
+.-box-photo-3-of-3 {
+  grid-row: 2/span 1;
+  grid-column: 2/span 1;
+  -ms-grid-column: 2;
+  -ms-grid-row: 2;
+}
+
+.-more-photos-overlay {
+  grid-row: 2/span 1;
+  grid-column: 2/span 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  font-size: 21px;
+  line-height: 30px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: rgba(126,142,134,.5);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box-with-photos, .box-with-photos .photo, .box-with-photos img {
+  height: 100%;
+  width: 100%;
+}
+
+.box-with-photos--text-area, .ideabook--ib-container .-photo-comments-line {
+  text-align: left;
+}
+
+.font--s {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.box-with-photos--text-area, .ideabook--ib-container .-photo-comments-line {
+  grid-row: 3/span 1;
+  grid-column: 1/span 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  display: block;
+  padding-left: 8px;
+  padding-right: 8px;
+}
