@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HomePageHeaderComponent } from 'src/app/core/headers/home-page-header/home-page-header.component';
 
-
 const routes: Routes = [
   { path: '', component: HomePageComponent}
 ];
