@@ -9,7 +9,6 @@ import { HomePageHeaderModule } from './core/headers/home-page-header/home-page-
 import { SideBarModule } from './shared/side-bar/side-bar.module';
 import {HttpClientModule} from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
-import { RatingModule } from 'ng-starrating';
 // import { DragDropDirective } from './shared/drag-drop.directive';
 
 
@@ -24,7 +23,6 @@ import { RatingModule } from 'ng-starrating';
     AppRoutingModule,
     SideBarModule,
     NbIconModule,
-    RatingModule,
     HomePageHeaderModule,
     BrowserAnimationsModule,
     NbDialogModule.forRoot(),
