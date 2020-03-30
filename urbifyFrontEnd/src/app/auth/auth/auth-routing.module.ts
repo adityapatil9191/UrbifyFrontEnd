@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -17,6 +18,10 @@ export const routes: Routes = [
       {
         path: 'register',
         component: RegistrationStepperComponent,
+      },
+      {
+        path : 'forgotPassword',
+        component: ForgotPasswordComponent
       }
     ]
   }
