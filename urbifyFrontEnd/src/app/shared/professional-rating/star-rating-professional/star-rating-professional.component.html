@@ -1,0 +1,33 @@
+
+
+<form (ngSubmit)="giveReviewsAndComments()" [formGroup]= "ratingAndComments" aria-labelledby="title">
+  <div class="form-control-group">
+    <label class="label" for="input-comments">Give Comments</label>
+    <textarea nbInput formControlName = "comments" id="input-comments" name="comments" placeholder="Comments" autofocus fullWidth  fieldSize="large"></textarea>
+    <div *ngIf="(fvalue.comments.invalid) && (fvalue.comments.touched || fvalue.comments.dirty)">
+      <span *ngIf="fvalue.comments.errors?.required" class="caption status-danger">
+        Please provide your comments.
+      </span>
+    </div>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-rating">Rating :</label>
+    <ngx-stars  id="input-rating" name="rating"  [readonly]= "false"  [color]= "'#FF9529'" [size]= "2" [initialStars]= "0"></ngx-stars>
+    <!-- <span *ngIf="(fvalue.rating.invalid) && (fvalue.rating.touched || fvalue.rating.dirty)">
+      <span *ngIf="fvalue.rating.errors?.required" class="caption status-danger">
+        Rating is required!
+      </span>
+    </span> -->
+  </div>
+  <br>
+  <button nbButton
+          fullWidth
+          status="primary"
+          size="large"
+          [disabled]= "!ratingAndComments.valid">
+    Submit Reviews
+  </button>
+</form>
+
+

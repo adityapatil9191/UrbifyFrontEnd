@@ -2,47 +2,47 @@
   <div class="form-control-group">
     <label class="label" for="input-name">Full name:</label>
     <input autocomplete="off" nbInput formControlName = "fullname" id="input-name" name="fullName" placeholder="Full name" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.fullname.invalid)  && fvalue.fullname.touched || fvalue.fullname.dirty">
+    <div *ngIf="(fvalue.fullname.invalid)  && fvalue.fullname.touched || fvalue.fullname.dirty">
       <span *ngIf="fvalue.fullname.errors?.required" class="caption status-danger">
         Full name is required!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-email">Email address:</label>
     <input autocomplete="off" nbInput formControlName="emailId" id="input-email" name="email" placeholder="Email address" fullWidth fieldSize="large" required>
-    <span *ngIf="(fvalue.emailId.invalid) && (fvalue.emailId.touched || fvalue.emailId.dirty)">
+    <div *ngIf="(fvalue.emailId.invalid) && (fvalue.emailId.touched || fvalue.emailId.dirty)">
       <span *ngIf="fvalue.emailId.errors?.required" class="caption status-danger">
         Email name is required!
       </span>
       <span *ngIf="fvalue.emailId.errors?.email" class="caption status-danger">
         Please enter correct emailId
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-phoneNumber">Phone Number(with country code):</label>
     <input autocomplete="off" nbInput formControlName="PhoneNumber" id="input-phoneNUmber" name="PhoneNumber" placeholder="PhoneNumber" fullWidth fieldSize="large" required>
-    <span *ngIf="(fvalue.PhoneNumber.invalid) && (fvalue.PhoneNumber.touched || fvalue.PhoneNumber.dirty)">
+    <div *ngIf="(fvalue.PhoneNumber.invalid) && (fvalue.PhoneNumber.touched || fvalue.PhoneNumber.dirty)">
       <span *ngIf="fvalue.PhoneNumber.errors?.required" class="caption status-danger">
         Phone Number is required!
       </span>
       <span *ngIf="fvalue.PhoneNumber.errors?.pattern" class="caption status-danger">
         Phone number should be a number!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-requirement">Your Requirement:</label>
     <textarea autocomplete="off" nbInput formControlName="requirementDescription" id="input-requirementDescription" name="requirementDescription" placeholder="requirement Description" fullWidth fieldSize="large" required></textarea>
-    <span *ngIf="(fvalue.requirementDescription.invalid) && (fvalue.requirementDescription.touched || fvalue.requirementDescription.dirty)">
+    <div *ngIf="(fvalue.requirementDescription.invalid) && (fvalue.requirementDescription.touched || fvalue.requirementDescription.dirty)">
       <span *ngIf="fvalue.requirementDescription.errors?.required" class="caption status-danger">
         Please enter your requirement!
       </span>
-    </span>
+    </div>
   </div>
 <br>
 <button nbButton

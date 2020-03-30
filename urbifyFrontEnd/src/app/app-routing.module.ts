@@ -11,13 +11,12 @@ import {
 
 
 const routes: Routes = [
-  {path: 'auth',loadChildren:'../app/auth/auth/auth.module#AuthModule'},
+  {path: 'auth', loadChildren: () => import('../app/auth/auth/auth.module').then(m => m.AuthModule)},
   { path: '', pathMatch: 'full', loadChildren: () => import('./modules/home-page/home-page.module').then( m => m.HomePageModule) }
 ];
 
 @NgModule({
   imports: [
-    
   RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })

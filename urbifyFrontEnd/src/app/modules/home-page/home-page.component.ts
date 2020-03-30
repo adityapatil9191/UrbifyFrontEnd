@@ -23,7 +23,10 @@ export class HomePageComponent implements OnInit {
     }
     return false;
   }
+  diplayRating(e) {
+    console.log(e);
+  }
   ngOnInit() {
-    this.windowService.open(GetFreeQuoteComponent, {title: `Get Free Quote`});
+    // this.windowService.open(GetFreeQuoteComponent, {title: `Get Free Quote`});
   }
 }

@@ -19,35 +19,35 @@
   <div class="form-control-group">
     <label class="label" for="input-degree">Degree/Certification:</label>
     <input nbInput formControlName = "degree" id="input-degree" name="degree" placeholder="Degree/Certification" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.degree.invalid)  && fvalue.degree.touched || fvalue.degree.dirty">
+    <div *ngIf="(fvalue.degree.invalid)  && fvalue.degree.touched || fvalue.degree.dirty">
       <span *ngIf="fvalue.degree.errors?.required" class="caption status-danger">
         Please enter your education!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-phn">Contact Number:</label>
     <input nbInput formControlName = "phnNumber" id="input-phnNumber" name="phnNumber" placeholder="Phone Number" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.phnNumber.invalid)  && fvalue.phnNumber.touched || fvalue.phnNumber.dirty">
+    <div *ngIf="(fvalue.phnNumber.invalid)  && fvalue.phnNumber.touched || fvalue.phnNumber.dirty">
       <span *ngIf="fvalue.phnNumber.errors?.required" class="caption status-danger">
         Please enter your phone Number!
       </span>
       <span *ngIf="fvalue.phnNumber.errors?.pattern" class="caption status-danger">
         Please enter a valid phoneNumber!
       </span>
-    </span>
+    </div>
   </div>
 
 
   <div class="form-control-group">
     <label class="label" for="input-intro">Tell Us About Yourself:</label>
     <textarea nbInput fullWidth formControlName = "about" id="input-about" name="about" placeholder="About Yourself" autofocus fullWidth  fieldSize="large"></textarea>
-    <span *ngIf="(fvalue.about.invalid)  && fvalue.about.touched || fvalue.about.dirty">
+    <div *ngIf="(fvalue.about.invalid)  && fvalue.about.touched || fvalue.about.dirty">
       <span *ngIf="fvalue.about.errors?.required" class="caption status-danger">
         Please introduce yourself and your work experience!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
