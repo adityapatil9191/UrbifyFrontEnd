@@ -1,3 +1,4 @@
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
@@ -22,6 +23,10 @@ export const routes: Routes = [
       {
         path : 'forgotPassword',
         component: ForgotPasswordComponent
+      },
+      {
+        path : 'resetPassword',
+        component: ResetPasswordComponent
       }
     ]
   }
