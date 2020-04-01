@@ -27,6 +27,5 @@ export class HomePageComponent implements OnInit {
     console.log(e);
   }
   ngOnInit() {
-    // this.windowService.open(GetFreeQuoteComponent, {title: `Get Free Quote`});
   }
 }
