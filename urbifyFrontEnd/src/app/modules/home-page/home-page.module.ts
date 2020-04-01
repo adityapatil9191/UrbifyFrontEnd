@@ -14,15 +14,14 @@ import {NbPopoverModule} from '@nebular/theme';
 import { FormsModule } from '@angular/forms';
 import { HowItWorksComponent } from './how-it-works/how-it-works.component';
 import { HomePageHeaderComponent } from 'src/app/core/headers/home-page-header/home-page-header.component';
-import { ProfessionalsComponent } from './professionals/professionals.component';
-
+import { ProfessionalRatingModule } from 'src/app/shared/professional-rating/professional-rating.module';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent}
 ];
 
 @NgModule({
-  declarations: [HomePageComponent, HowItWorksComponent, ProfessionalsComponent ],
+  declarations: [HomePageComponent, HowItWorksComponent, HomePageHeaderComponent ],
   imports: [
     NbActionsModule,
     SideBarModule,
@@ -38,7 +37,7 @@ const routes: Routes = [
     FormsModule,
     NbRadioModule,
     NbInputModule,
-    NbButtonModule,
+    ProfessionalRatingModule,
     NbWindowModule.forChild(),
     GetFreeQuoteModule,
     NbSidebarModule.forRoot(),
