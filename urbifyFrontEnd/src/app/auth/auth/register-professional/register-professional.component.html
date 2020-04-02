@@ -19,34 +19,34 @@
   <div class="form-control-group">
     <label class="label" for="input-name">Full name:</label>
     <input nbInput formControlName = "fullname" id="input-name" name="fullName" placeholder="Full name" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.fullname.invalid)  && fvalue.fullname.touched || fvalue.fullname.dirty">
+    <div *ngIf="(fvalue.fullname.invalid)  && fvalue.fullname.touched || fvalue.fullname.dirty">
       <span *ngIf="fvalue.fullname.errors?.required" class="caption status-danger">
         Full name is required!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-email">Email address:</label>
     <input nbInput formControlName="emailId" id="input-email" name="email" placeholder="Email address" fullWidth fieldSize="large" required>
-    <span *ngIf="(fvalue.emailId.invalid) && (fvalue.emailId.touched || fvalue.emailId.dirty)">
+    <div *ngIf="(fvalue.emailId.invalid) && (fvalue.emailId.touched || fvalue.emailId.dirty)">
       <span *ngIf="fvalue.emailId.errors?.required" class="caption status-danger">
         Email name is required!
       </span>
       <span *ngIf="fvalue.emailId.errors?.email" class="caption status-danger">
         Please enter correct emailId
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-password">Password:</label>
     <input nbInput formControlName="password" type="password" id="input-password" name="password" placeholder="Password" fullWidth fieldSize="large">
-    <span *ngIf="fvalue.password.invalid && (fvalue.password.touched || fvalue.password.dirty)">
+    <div *ngIf="fvalue.password.invalid && (fvalue.password.touched || fvalue.password.dirty)">
       <span *ngIf="fvalue.password.errors?.required" class="caption status-danger">
         Password  is required!
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
@@ -68,14 +68,14 @@
   <div class="form-control-group">
     <label class="label" for="input-experience">Experience</label>
     <input nbInput formControlName="experience" id="input-experience" name="experience" pattern="[0-99]" placeholder="Experience" fullWidth fieldSize="large">
-    <span *ngIf="fvalue.experience.invalid && (fvalue.experience.touched || fvalue.experience.dirty)">
+    <div *ngIf="fvalue.experience.invalid && (fvalue.experience.touched || fvalue.experience.dirty)">
       <span *ngIf="fvalue.experience.errors?.required" class="caption status-danger">
         Experience is required!
       </span>
       <span *ngIf="fvalue.experience.errors?.pattern" class="caption status-danger">
         Experience should be a number!
       </span>
-    </span>
+    </div>
   </div>
 
   <button nbButton

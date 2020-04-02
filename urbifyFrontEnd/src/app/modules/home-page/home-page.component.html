@@ -1,13 +1,18 @@
-<nb-layout  windowMode="true" withScroll="true">
-  <nb-layout-header fixed="true">
+<nb-layout>
+  <nb-layout-header>
     <nb-icon icon="menu-2-outline" (click)="collapse()"></nb-icon>
-    <app-home-page-header class="header-straight-line"></app-home-page-header>
+    <app-home-page-header class="header-straight-line">
+
+    </app-home-page-header>
   </nb-layout-header>
-  <nb-sidebar>
+  <!-- <nb-sidebar responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'>
+  </nb-sidebar> -->
+  <nb-sidebar class="page-layout">
     <app-side-bar  responsive=true collapsedBreakpoints="['1200','is']" tag='sideFilterBar'></app-side-bar>
   </nb-sidebar>
   <nb-layout-column class="colored-column-basic">
     <app-how-it-works></app-how-it-works>
-    <app-professionals></app-professionals>
   </nb-layout-column>
+  <nb-layout-footer>Footer
+  </nb-layout-footer>
 </nb-layout>

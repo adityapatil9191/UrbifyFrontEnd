@@ -16,7 +16,8 @@ import { RegistrationStepperComponent } from './registration-stepper/registratio
 import { AddProjectsComponent } from './add-projects/add-projects.component';
 import { DragDropDirective } from 'src/app/shared/drag-drop.directive';
 import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-conditions.component';
-
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -26,7 +27,9 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
     AddProjectsComponent,
     DragDropDirective,
     DragDropComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,

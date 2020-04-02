@@ -2,6 +2,18 @@
   font-weight: 600;
 }
 
+:host {
+  display: block;
+  padding-bottom: 5rem;
+}
+
+:host {
+  display: block;
+  max-height: 25rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .card-row {
   display: flex;
   margin: 0 -0.5rem;
