@@ -17,53 +17,69 @@
 
 <form (ngSubmit)="registerProjects()" [formGroup]="projectRegisterForm" aria-labelledby="title">
   <div class="form-control-group">
-    <label class="label" for="input-project-title">Project Details:</label>
+    <label class="label" for="input-project-title">Project title:</label>
     <input nbInput formControlName = "projectTitle" id="input-project-title" name="projectTitle" placeholder="Project Title" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.projectTitle.invalid)  && fvalue.projectTitle.touched || fvalue.projectTitle.dirty">
+    <div *ngIf="(fvalue.projectTitle.invalid)  && fvalue.projectTitle.touched || fvalue.projectTitle.dirty">
       <span *ngIf="fvalue.projectTitle.errors?.required" class="caption status-danger">
         Please enter project title.
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-project-location">Project Location:</label>
     <input nbInput formControlName = "projectLocation" id="input-project-location" name="projectLocation" placeholder="Project Location" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.projectLocation.invalid)  && fvalue.projectLocation.touched || fvalue.projectLocation.dirty">
+    <div *ngIf="(fvalue.projectLocation.invalid)  && fvalue.projectLocation.touched || fvalue.projectLocation.dirty">
       <span *ngIf="fvalue.projectLocation.errors?.required" class="caption status-danger">
         Please enter project location.
       </span>
-    </span>
+    </div>
   </div>
 
   <div class="form-control-group">
-    <label class="label" for="input-project-period">Completed Withing months:</label>
-    <input nbInput formControlName = "projectPeriod" id="input-project-period" name="projectPeriod" placeholder="Project Period" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.projectPeriod.invalid)  && fvalue.projectPeriod.touched || fvalue.projectPeriod.dirty">
-      <span *ngIf="fvalue.projectPeriod.errors?.required" class="caption status-danger">
-        Please enter project period.
+    <label class="label" for="input-completed-within">Completed within months:</label>
+    <input nbInput formControlName = "completedWithinMonths" id="input-completed-withing-months" name="completedWithinMonths" placeholder="completed within months" autofocus fullWidth  fieldSize="large">
+    <div *ngIf="(fvalue.completedWithinMonths.invalid)  && fvalue.completedWithinMonths.touched || fvalue.completedWithinMonths.dirty">
+      <span *ngIf="fvalue.completedWithinMonths.errors?.required" class="caption status-danger">
+        Please enter project completion months.
       </span>
-    </span>
+      <span *ngIf="fvalue.completedWithinMonths.errors?.pattern" class="caption status-danger">
+       Project completion months should be a number.
+      </span>
+    </div>
+  </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-project-period">Project description:</label>
+    <textarea nbInput formControlName = "projectDescription" id="input-project-description" name="projectDescription" placeholder="Project Description" autofocus fullWidth  fieldSize="large"></textarea>
+    <div *ngIf="(fvalue.projectDescription.invalid)  && fvalue.projectDescription.touched || fvalue.projectDescription.dirty">
+      <span *ngIf="fvalue.projectDescription.errors?.required" class="caption status-danger">
+        Please enter project description.
+      </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-project-images">Project budget:</label>
     <input nbInput formControlName = "projectBudget" id="input-project-budget" name="projectBudget" placeholder="Project Budget" autofocus fullWidth  fieldSize="large">
-    <span *ngIf="(fvalue.projectBudget.invalid)  && fvalue.projectBudget.touched || fvalue.projectBudget.dirty">
+    <div *ngIf="(fvalue.projectBudget.invalid)  && fvalue.projectBudget.touched || fvalue.projectBudget.dirty">
       <span *ngIf="fvalue.projectBudget.errors?.required" class="caption status-danger">
         Please enter project estimated budget.
       </span>
-    </span>
+      <span *ngIf="fvalue.projectBudget.errors?.pattern" class="caption status-danger">
+        Project estimated budget shoule be a number.
+      </span>
+    </div>
   </div>
 
   <div class="form-control-group">
     <label class="label" for="input-project-images">Please upload project images:</label>
     <app-drag-drop   id="input-project-images" name="projectImages" placeholder="Project Images" autofocus fullWidth  fieldSize="large"></app-drag-drop>
-    <span *ngIf="(fvalue.projectPeriod.invalid)  && fvalue.projectPeriod.touched || fvalue.projectPeriod.dirty">
-      <span *ngIf="fvalue.projectPeriod.errors?.required" class="caption status-danger">
+    <div *ngIf="(fvalue.projectImages.invalid)  && fvalue.projectImages.touched || fvalue.projectImages.dirty">
+      <span *ngIf="fvalue.projectImages.errors?.required" class="caption status-danger">
         Upload Project images!.
       </span>
-    </span>
+    </div>
   </div>
 
 
