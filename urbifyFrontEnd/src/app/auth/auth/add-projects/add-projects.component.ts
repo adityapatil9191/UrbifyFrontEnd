@@ -29,10 +29,10 @@ addAnotherProject(){
     this.projectRegisterForm = this.fb.group({
       projectTitle: ['', Validators.required],
       projectLocation: ['', Validators.required],
-      completedWithinMonths:  ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
+      completedWithinMonths:  ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       projectDescription: ['', Validators.required],
-      projectBudget: ['', [Validators.required, Validators.pattern("^[0-9]*$")]],
-      projectImages: ['',Validators.required ]
+      projectBudget: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
+      projectImages: ['', Validators.required ]
     } );
     this.fvalue = this.projectRegisterForm.controls;
   }
