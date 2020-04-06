@@ -14,14 +14,7 @@ export class HomePageComponent implements OnInit {
   filterBarOpen = true;
   constructor(public sidebarService: NbSidebarService, public router: Router, public windowService: NbWindowService) { }
   collapse() {
-    if (this.filterBarOpen === false) {
-      this.sidebarService.expand('sideFilterBar');
-      this.filterBarOpen = true;
-    } else {
-      this.filterBarOpen = false;
-      this.sidebarService.collapse('sideFilterBar');
-    }
-    return false;
+   this.sidebarService.toggle();
   }
   ngOnInit() {
   }
