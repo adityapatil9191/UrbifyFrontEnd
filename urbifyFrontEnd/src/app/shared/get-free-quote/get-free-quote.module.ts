@@ -16,6 +16,7 @@ import { DetailsSentComponent } from './details-sent/details-sent.component';
     NbIconModule,
     NbInputModule
   ],
+  exports: [GetFreeQuoteComponent],
   entryComponents: [GetFreeQuoteComponent]
 })
 export class GetFreeQuoteModule { }
