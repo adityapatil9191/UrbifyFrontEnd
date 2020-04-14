@@ -1,0 +1,14 @@
+@import '../../../../../../themes';
+@include nb-install-component() {
+  nb-card{
+    nb-card-header{
+      border-bottom: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      span{
+        color: #00A99D;
+        font-size: 0.75rem;
+      }
+    }
+  }
+}
