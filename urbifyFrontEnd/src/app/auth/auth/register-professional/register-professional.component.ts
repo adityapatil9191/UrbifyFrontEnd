@@ -19,6 +19,7 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     ) {
       super(service, options, cd, router);
     }
+  selectedItem = '2';
   professionalRegisterForm;
   fvalue;
   @Output() sendFormValues = new EventEmitter();
@@ -26,9 +27,10 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     this.professionalRegisterForm = this.fb.group({
       fullname : ['', [ Validators.required]],
       email : ['', [ Validators.required, Validators.email]],
-      experience: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       password: ['', Validators.required],
-      repeatPassword: ['', Validators.required]
+      repeatPassword: ['', Validators.required],
+      professional: ['', Validators.required],
+      phnNumber: ['', [ Validators.required, Validators.pattern( '^[0-9]*$' )]],
     },
     { validator: this.matchingPasswords('password', 'repeatPassword')}
     );

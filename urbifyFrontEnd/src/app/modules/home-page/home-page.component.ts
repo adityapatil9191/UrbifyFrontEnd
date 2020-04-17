@@ -11,7 +11,6 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
   title = 'urbifyFrontEnd';
-  filterBarOpen = true;
   constructor(public sidebarService: NbSidebarService, public router: Router, public windowService: NbWindowService) { }
   collapse() {
    this.sidebarService.toggle();

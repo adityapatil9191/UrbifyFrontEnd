@@ -63,20 +63,35 @@
 
   </div>
 
-
-
   <div class="form-control-group">
-    <label class="label" for="input-experience">Experience</label>
-    <input nbInput formControlName="experience" id="input-experience" name="experience" pattern="[0-99]" placeholder="Experience" fullWidth fieldSize="large">
-    <div *ngIf="fvalue.experience.invalid && (fvalue.experience.touched || fvalue.experience.dirty)">
-      <span *ngIf="fvalue.experience.errors?.required" class="caption status-danger">
-        Experience is required!
+    <label class="label" for="input-phn">Contact Number:</label>
+    <input nbInput formControlName = "phnNumber" id="input-phnNumber" name="phnNumber" placeholder="Phone Number" autofocus fullWidth  fieldSize="large">
+    <div *ngIf="(fvalue.phnNumber.invalid)  && fvalue.phnNumber.touched || fvalue.phnNumber.dirty">
+      <span *ngIf="fvalue.phnNumber.errors?.required" class="caption status-danger">
+        Please enter your phone Number!
       </span>
-      <span *ngIf="fvalue.experience.errors?.pattern" class="caption status-danger">
-        Experience should be a number!
+      <span *ngIf="fvalue.phnNumber.errors?.pattern" class="caption status-danger">
+        Please enter a valid phoneNumber!
       </span>
     </div>
   </div>
+
+  <div class="form-control-group">
+    <label class="label" for="input-professional">Select Profession:</label>
+    <nb-select formControlName="professional" placeholder="Select Showcase" [(selected)]= "selectedItem" fullWidth fieldSize="large">
+      <nb-option value="">Select Profession</nb-option>
+      <nb-option value="0">Interior Designer</nb-option>
+      <nb-option value="1">Architect</nb-option>
+      <nb-option value="2">Carpenter</nb-option>
+      <nb-option value="3">Vendors</nb-option>
+    </nb-select>
+    <div *ngIf= "fvalue.professional.invalid && (fvalue.professional.touched || fvalue.professional.dirty)">
+      <div *ngIf="fvalue.professional.errors?.required" class="caption status-danger">
+        Please select your profession!
+      </div>
+  </div>
+  </div>
+
 
   <button nbButton
           fullWidth
