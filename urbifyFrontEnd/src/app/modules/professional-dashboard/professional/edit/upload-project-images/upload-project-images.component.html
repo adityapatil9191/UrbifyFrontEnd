@@ -1,0 +1,10 @@
+<button nbButton status="primary" (click)="open(dialog)"><nb-icon icon="plus-outline"></nb-icon> Project images</button>
+<ng-template #dialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Upload Project images</nb-card-header>
+    <nb-card-body>
+      <app-drag-and-drop></app-drag-and-drop>
+      <button nbButton fullWidth  class="m-2" status="primary">Upload</button>
+    </nb-card-body>
+  </nb-card>
+</ng-template>

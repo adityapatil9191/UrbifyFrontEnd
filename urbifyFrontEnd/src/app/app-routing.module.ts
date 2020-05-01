@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: 'professional-page',
     loadChildren: () => import('./modules/professional-page/professional-page.module').then(m => m.ProfessionalPageModule)
+  },
+  {
+    path: 'professional-dashboard',
+    loadChildren: () => import('./modules/professional-dashboard/professional-dashboard.module').then(m => m.ProfessionalDashboardModule)
   }
 ];
 

@@ -1,0 +1,29 @@
+.swiper-slide{
+  width: auto;
+  position: relative;
+  .layer{
+    display: none;
+  }
+  &:hover .layer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgba(0, 123, 255, .8);
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    button{
+      margin: auto;
+    }
+  }
+}
+.swiper-button-disabled{
+  display: none;
+}
