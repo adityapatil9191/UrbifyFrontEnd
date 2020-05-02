@@ -1,3 +1,4 @@
+import { ModalPopUpComponent } from './../../../shared/modal-pop-up/modal-pop-up/modal-pop-up.component';
 import { AuthCommonService } from './../auth-common-service.service';
 import { DataSharingService } from './../data-sharing.service';
 import { Component, OnInit, ChangeDetectorRef, Inject,ChangeDetectionStrategy } from '@angular/core';
@@ -16,6 +17,8 @@ import { NbDialogService } from '@nebular/theme';
 export class TermsAndConditionsComponent extends NbRegisterComponent implements OnInit {
   termsAndConditions;
   checkBoxChecked;
+  sharedForm;
+  sharedFormValues;
   constructor(
     protected service: NbAuthService,
     @Inject(NB_AUTH_OPTIONS) protected options = {},
@@ -41,34 +44,37 @@ export class TermsAndConditionsComponent extends NbRegisterComponent implements 
     this.termsAndConditions = this.fb.group({
       agreeTermsAndConditions: ['', Validators.required]
     });
-  }
-  finishRegistration() {
-    const formSharing = this.dataSharing.registerFormData$.subscribe((data)=>{
+    this.sharedForm = this.dataSharing.registerFormData$.subscribe((data)=>{
       if(data){
         data.termsAndConditions = this.termsAndConditions.controls.agreeTermsAndConditions.value;
-        this.http.registerUser(data).subscribe((info)=>{
-        if(info.error === false){
-          this.router.navigate(['../registrationcomplete'], { relativeTo: this.route });
-        }else{
-          alert(info.message);
-        }
-
-      },
-      (err)=>{
-        console.log(err);
-      }
-      )
+        this.sharedFormValues = data;
       }else{
-        alert('Please register yourself first!!');
+        this.sharedFormValues = null;
       }
-
-    },
-    (err)=>{
-      console.log(err);
+    })
+  }
+  finishRegistration() {
+    this.http.registerUser(this.sharedFormValues).subscribe((info)=>{
+      console.log(info);
+    if(info){
+      if(info.error === false && info.message){
+        this.router.navigate(['../registrationcomplete'], { relativeTo: this.route });
+      }else{
+        this.dialogService.open(ModalPopUpComponent, {
+          context: {
+            title: info.message,
+          },
+        });
+      }
     }
-    )
 
-    formSharing.unsubscribe();
+  },
+  (err)=>{
+    console.log(err);
+  }
+  )
+
+  this.sharedForm.unsubscribe();
   }
 
 }

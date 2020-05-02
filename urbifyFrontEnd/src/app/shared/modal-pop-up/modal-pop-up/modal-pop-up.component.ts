@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
 @Component({
@@ -7,15 +7,15 @@ import { NbDialogRef } from '@nebular/theme';
   styleUrls: ['./modal-pop-up.component.scss']
 })
 export class ModalPopUpComponent implements OnInit {
-
+  @Input() title:string;
   constructor(
 
-    // protected dialogRef: NbDialogRef
+    protected dialogRef: NbDialogRef<any>
   ) { }
 
-    // close() {
-    //   this.dialogRef.close();
-    // }
+    close() {
+      this.dialogRef.close();
+    }
 
   ngOnInit() {
   }

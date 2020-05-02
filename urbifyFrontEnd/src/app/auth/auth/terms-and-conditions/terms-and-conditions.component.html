@@ -56,7 +56,7 @@
           fullWidth
           status="primary"
           size="large"
-          [disabled]= "submitted || !termsAndConditions.valid || checkBoxChecked"
+          [disabled]= "submitted || !termsAndConditions.valid || checkBoxChecked || !sharedFormValues"
           [class.btn-pulse]= "submitted">
     Create My Profile
   </button>

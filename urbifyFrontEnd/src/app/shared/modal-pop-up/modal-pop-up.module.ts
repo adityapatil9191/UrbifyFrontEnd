@@ -1,4 +1,4 @@
-import { NbCardModule } from '@nebular/theme';
+import { NbCardModule, NbButtonModule } from '@nebular/theme';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalPopUpComponent } from './modal-pop-up/modal-pop-up.component';
@@ -9,7 +9,8 @@ import { ModalPopUpComponent } from './modal-pop-up/modal-pop-up.component';
   declarations: [ModalPopUpComponent],
   imports: [
     CommonModule,
-    NbCardModule
+    NbCardModule,
+    NbButtonModule
   ],
   entryComponents: [ModalPopUpComponent]
 })
