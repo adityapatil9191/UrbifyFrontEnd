@@ -47,7 +47,6 @@ import { RegistrationSuccessfullComponent } from './registration-successfull/reg
     NgxIntlTelInputModule,
     NbSelectModule,
     NbSpinnerModule,
-    NbDialogModule.forChild(),
     NbDialogModule.forChild()
   ]
 })
