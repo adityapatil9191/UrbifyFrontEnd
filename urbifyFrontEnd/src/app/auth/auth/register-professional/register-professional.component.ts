@@ -1,6 +1,8 @@
+import { DataSharingService } from './../data-sharing.service';
+import { AuthCommonService } from './../auth-common-service.service';
 import { Component, OnInit, ChangeDetectorRef, Inject, Output, EventEmitter } from '@angular/core';
 import {NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -15,7 +17,10 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     @Inject(NB_AUTH_OPTIONS) protected options = {},
     protected cd: ChangeDetectorRef,
     protected router: Router,
-    protected fb: FormBuilder
+    protected fb: FormBuilder,
+    public authCommonService: AuthCommonService,
+    public dataSharing:DataSharingService,
+    public route: ActivatedRoute
     ) {
       super(service, options, cd, router);
     }
@@ -52,8 +57,16 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     };
 }
 
-  register() {
-    this.sendFormValues.emit(this.fvalue);
+registerProfessional() {
+    const registerFormData = {
+      fullname: this.fvalue.fullname.value,
+      email: this.fvalue.email.value,
+      password: this.fvalue.password.value,
+      phnNumber:this.fvalue.phnNumber.value,
+      professional:  this.fvalue.professional.value,
+    }
+    this.dataSharing.getRegisteredUserData(registerFormData);
+    this.router.navigate(['../termsandconditions'], { relativeTo: this.route });
   }
 
 }

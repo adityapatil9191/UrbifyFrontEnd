@@ -15,7 +15,7 @@
   </ul>
 </nb-alert>
 
-<form (ngSubmit)="register()" [formGroup]= "professionalRegisterForm" aria-labelledby="title">
+<form  [formGroup]= "professionalRegisterForm" aria-labelledby="title">
   <div class="form-control-group">
     <label class="label" for="input-name">Full name:</label>
     <input nbInput formControlName = "fullname" id="input-name" name="fullName" placeholder="Full name" autofocus fullWidth  fieldSize="large">
@@ -96,6 +96,7 @@
   <button nbButton
           fullWidth
           status="primary"
+          (click) = "registerProfessional()"
           size="large"
           [disabled]="submitted || !professionalRegisterForm.valid"
           [class.btn-pulse]="submitted">

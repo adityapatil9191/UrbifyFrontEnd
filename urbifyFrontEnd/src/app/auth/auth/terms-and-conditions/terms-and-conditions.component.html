@@ -15,8 +15,8 @@
   </ul>
 </nb-alert>
 
-<form (ngSubmit)="register()" [formGroup]= "termsAndConditions" aria-labelledby="title">
-  <div class="form-control-group">
+<form (ngSubmit)= "finishRegistration()" [formGroup]= "termsAndConditions" aria-labelledby="title">
+  <div class="form-control-group" [nbSpinner]= "false" nbSpinnerStatus="primary">
     <p>
       1) You accept that Urbify is a platform for you to connect with potential clients and you are solely responsible for your services.
     </p>
@@ -54,7 +54,6 @@
 
   <button nbButton
           fullWidth
-          (click) = "open()"
           status="primary"
           size="large"
           [disabled]= "submitted || !termsAndConditions.valid || checkBoxChecked"
