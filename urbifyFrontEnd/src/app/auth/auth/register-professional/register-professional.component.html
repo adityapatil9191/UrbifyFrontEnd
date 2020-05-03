@@ -46,6 +46,9 @@
       <span *ngIf="fvalue.password.errors?.required" class="caption status-danger">
         Password  is required!
       </span>
+      <span *ngIf="fvalue.password.errors?.minlength || fvalue.password.errors?.maxlength" class="caption status-danger">
+        Password should be minimum 4 characters long and maximum 40 characters long.
+      </span>
     </div>
   </div>
 
@@ -53,14 +56,16 @@
     <label class="label" for="input-re-password">Repeat password:</label>
     <input nbInput formControlName="repeatPassword" type="password" id="input-re-password" name="rePass" placeholder="Confirm Password" fullWidth fieldSize="large">
     <div *ngIf="fvalue.repeatPassword.invalid && (fvalue.repeatPassword.touched || fvalue.repeatPassword.dirty)">
-      <div *ngIf="fvalue.repeatPassword.errors?.required" class="caption status-danger">
+      <span *ngIf="fvalue.repeatPassword.errors?.required" class="caption status-danger">
         Repeat Password  is required!
-      </div>
+      </span>
+      <span *ngIf="fvalue.repeatPassword.errors?.minlength || fvalue.repeatPassword.errors?.maxlength" class="caption status-danger">
+        Password should be minimum 4 characters long and maximum 40 characters long.
+      </span>
   </div>
   <div class="caption status-danger" *ngIf="(fvalue.repeatPassword.touched || fvalue.repeatPassword.dirty) && professionalRegisterForm.hasError('mismatchedPasswords')">
       Passwords do not match
-    </div>
-
+  </div>
   </div>
 
   <div class="form-control-group">
@@ -80,10 +85,10 @@
     <label class="label" for="input-professional">Select Profession:</label>
     <nb-select formControlName="professional" placeholder="Select Showcase" [(selected)]= "selectedItem" fullWidth fieldSize="large">
       <nb-option value="">Select Profession</nb-option>
-      <nb-option value="0">Interior Designer</nb-option>
-      <nb-option value="1">Architect</nb-option>
-      <nb-option value="2">Carpenter</nb-option>
-      <nb-option value="3">Vendors</nb-option>
+      <nb-option value="Interior Designer">Interior Designer</nb-option>
+      <nb-option value="Architect">Architect</nb-option>
+      <nb-option value="Carpenter">Carpenter</nb-option>
+      <nb-option value="Vendors">Vendors</nb-option>
     </nb-select>
     <div *ngIf= "fvalue.professional.invalid && (fvalue.professional.touched || fvalue.professional.dirty)">
       <div *ngIf="fvalue.professional.errors?.required" class="caption status-danger">

@@ -32,8 +32,8 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     this.professionalRegisterForm = this.fb.group({
       fullname : ['', [ Validators.required]],
       email : ['', [ Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      repeatPassword: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
+      repeatPassword: ['', [Validators.required,Validators.minLength(4), Validators.maxLength(40)]],
       professional: ['', Validators.required],
       phnNumber: ['', [ Validators.required, Validators.pattern( '^[0-9]*$' )]],
     },

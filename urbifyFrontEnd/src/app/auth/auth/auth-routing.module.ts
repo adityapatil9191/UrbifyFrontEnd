@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { NbAuthComponent } from '@nebular/auth';
 import { LoginComponent } from './login/login.component';
 import { RegistrationSuccessfullComponent } from './registration-successfull/registration-successfull.component';
+import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 
 
 export const routes: Routes = [
@@ -38,6 +39,10 @@ export const routes: Routes = [
       {
         path : 'registrationcomplete',
         component: RegistrationSuccessfullComponent
+      },
+      {
+        path: 'verify/:emailToken',
+        component: EmailVerifiedComponent
       }
     ]
   }

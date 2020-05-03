@@ -24,8 +24,8 @@ export class ResetPasswordComponent extends NbRegisterComponent implements OnIni
     fvalue;
     ngOnInit() {
       this.resetPasswordForm = this.fb.group({
-        password: ['', Validators.required],
-        repeatPassword: ['', Validators.required]
+        password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
+        repeatPassword: ['', [Validators.required,Validators.minLength(4), Validators.maxLength(40)]]
       },
       { validator: this.matchingPasswords('password', 'repeatPassword')}
       );

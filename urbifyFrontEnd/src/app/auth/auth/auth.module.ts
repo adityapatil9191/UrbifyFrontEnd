@@ -17,6 +17,7 @@ import { TermsAndConditionsComponent } from './terms-and-conditions/terms-and-co
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RegistrationSuccessfullComponent } from './registration-successfull/registration-successfull.component';
+import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RegistrationSuccessfullComponent } from './registration-successfull/reg
     TermsAndConditionsComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    RegistrationSuccessfullComponent
+    RegistrationSuccessfullComponent,
+    EmailVerifiedComponent
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,7 @@ import { RegistrationSuccessfullComponent } from './registration-successfull/reg
     NgxIntlTelInputModule,
     NbSelectModule,
     NbSpinnerModule,
+    NbAlertModule,
     NbDialogModule.forChild()
   ]
 })

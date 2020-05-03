@@ -1,0 +1,13 @@
+<nb-card>
+  <nb-card-body class="form-control-group">
+    Please wait while we verify your email.
+    You will be redirected to login page after verification is successfull.
+  </nb-card-body>
+</nb-card>
+<nb-alert *ngIf = "emailVerified" status="success" closable >
+  You have been successfully authenticated!
+</nb-alert>
+
+<nb-alert *ngIf = "emailVerifiedFailed" status="danger" closable >
+  Authentication failed . Wrong email token!
+</nb-alert>
