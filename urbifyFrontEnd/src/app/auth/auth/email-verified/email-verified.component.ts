@@ -30,7 +30,6 @@ export class EmailVerifiedComponent implements OnInit {
   this.authCommonService.verifyEmail(this.verificationObject).subscribe((data)=>{
     if(data.error === false){
       this.emailVerified = true;
-      this.router.navigate(['auth/login']);
     }else{
       this.emailVerifiedFailed = true;
     }
@@ -40,6 +39,9 @@ export class EmailVerifiedComponent implements OnInit {
     console.log(err);
   }
   );
+  }
+  routeToLoginPage(){
+    this.router.navigate(['auth/login']);
   }
 
 }

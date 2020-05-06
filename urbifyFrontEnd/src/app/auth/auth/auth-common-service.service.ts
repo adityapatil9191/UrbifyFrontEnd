@@ -26,4 +26,9 @@ export class AuthCommonService {
     return this.http.post<registeredUser>(this.baseUrl+'login',loginForm);
   }
 
+  // forgot password api
+  forgotPassword(email):Observable<registeredUser>{
+    return this.http.post<registeredUser>(this.baseUrl+'forgotPasswordToken',email);
+  }
+
 }

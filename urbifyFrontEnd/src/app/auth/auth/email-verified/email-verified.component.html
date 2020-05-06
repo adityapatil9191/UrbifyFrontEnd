@@ -7,6 +7,13 @@
 <nb-alert *ngIf = "emailVerified" status="success" closable >
   You have been successfully authenticated!
 </nb-alert>
+<button nbButton *ngIf = "emailVerified"
+          fullWidth
+          status="primary"
+          (click) = "routeToLoginPage()"
+          size="large">
+    Next
+  </button>
 
 <nb-alert *ngIf = "emailVerifiedFailed" status="danger" closable >
   Authentication failed . Wrong email token!

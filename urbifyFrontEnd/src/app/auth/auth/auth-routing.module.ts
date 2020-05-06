@@ -33,7 +33,7 @@ export const routes: Routes = [
         component: ForgotPasswordComponent
       },
       {
-        path : 'resetPassword',
+        path : 'resetPassword/:emailToken',
         component: ResetPasswordComponent
       },
       {
