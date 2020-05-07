@@ -1,0 +1,53 @@
+<section class="header-bg">
+  <div class="container-fluid margins" style="background: rgba(0, 123, 255, .8) url('https://www.designesia.com/themes/archi-main/images/background/bg-4.jpg') no-repeat center center fixed; height: 500px;"></div>
+  <div class="layer"></div>
+  <div class="edit-cover-photo">
+    <button nbButton status="primary"
+    (click)="editCoverPhoto()">
+      <nb-icon icon="edit"></nb-icon>
+      Edit cover photo
+    </button>
+  </div>
+</section>
+<section class="professional-profile">
+  <div class="container">
+    <nb-card class="professional-card">
+      <nb-card-body class="p-0">
+        <div class="d-flex justify-content-center">
+          <div class="profile-pic professional-img">
+            <img class=" img-fluid mx-auto" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image">
+            <div class="edit-profile-pic">
+              <button nbButton status="primary"
+              (click)="editProfilePic()">
+                <nb-icon icon="edit"></nb-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="text-center">
+          <h3 class="f-w-600 m-t-25 m-b-10">Alessa Robert</h3>
+          <span>Interior designer</span>
+        </div>
+        <nb-actions class="mt-4 mx-auto" fullWidth size="medium">
+          <nb-action class="d-flex flex-column h-25" routerLink="/professional-dashboard">
+            <nb-icon icon="info-outline"></nb-icon>
+            <h6>Overview</h6>
+          </nb-action>
+          <nb-action class="d-flex flex-column h-25" routerLink="/professional-dashboard">
+            <span>10</span>
+            <h6>Projects</h6>
+          </nb-action>
+          <nb-action class="d-flex flex-column h-25" routerLink="/professional-dashboard">
+            <nb-icon icon="star"></nb-icon>
+            <h6>Reviews and comments</h6>
+          </nb-action>
+          <nb-action class="d-flex flex-column h-25" routerLink="/professional-dashboard">
+            <nb-icon icon="phone-call-outline"></nb-icon>
+            <h6>Contact me</h6>
+          </nb-action>
+        </nb-actions>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</section>
+<router-outlet></router-outlet>
