@@ -31,4 +31,8 @@ export class AuthCommonService {
     return this.http.post<registeredUser>(this.baseUrl+'forgotPasswordToken',email);
   }
 
+  resetPassword(newPassword):Observable<registeredUser>{
+    return this.http.post<registeredUser>(this.baseUrl+'passwordReset',newPassword)
+  }
+
 }

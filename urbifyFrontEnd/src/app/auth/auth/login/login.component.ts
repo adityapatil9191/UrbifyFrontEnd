@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthCommonService } from '../auth-common-service.service';
 import { DataSharingService } from '../data-sharing.service';
+import { NbDialogService } from '@nebular/theme';
+import { ModalPopUpComponent } from 'src/app/shared/modal-pop-up/modal-pop-up/modal-pop-up.component';
 
 @Component({
   selector: 'app-login',
@@ -21,7 +23,8 @@ export class LoginComponent extends NbLoginComponent implements OnInit {
     protected fb: FormBuilder,
     public authCommonService: AuthCommonService,
     public dataSharing:DataSharingService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private dialogService: NbDialogService,
     ) {
       super(service, options, cd, router);
     }
@@ -40,10 +43,21 @@ export class LoginComponent extends NbLoginComponent implements OnInit {
       password: this.fvalue.password.value
     }
     this.authCommonService.loginUser(loginObject).subscribe((data)=>{
-      console.log(data);
+      if(data.error === false){
+        this.dialogService.open(ModalPopUpComponent, {
+            context: {
+              title: data.message,
+            },
+          });
+        this.router.navigate(['professional-dashboard']);
+      }
     },
-    (err)=>{
-      console.log(err);
+    (error)=>{
+      this.dialogService.open(ModalPopUpComponent, {
+        context: {
+          title: error.error.message,
+        },
+      });
     }
     )
   }
