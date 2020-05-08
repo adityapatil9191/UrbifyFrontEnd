@@ -1,4 +1,4 @@
-import { AuthCommonService } from './../auth-common-service.service';
+import { AuthCommonService } from './../services/auth-common-service.service';
 import { Component, OnInit, Inject, ChangeDetectorRef } from '@angular/core';
 import {NbLoginComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
 import { Router } from '@angular/router';

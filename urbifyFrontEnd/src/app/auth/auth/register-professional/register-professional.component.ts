@@ -1,5 +1,5 @@
-import { DataSharingService } from './../data-sharing.service';
-import { AuthCommonService } from './../auth-common-service.service';
+import { DataSharingService } from './../services/data-sharing.service';
+import { AuthCommonService } from './../services/auth-common-service.service';
 import { Component, OnInit, ChangeDetectorRef, Inject, Output, EventEmitter } from '@angular/core';
 import {NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
 import { Router, ActivatedRoute } from '@angular/router';

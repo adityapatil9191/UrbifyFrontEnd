@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef, Inject, Output, EventEmitter } fr
 import {NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
 import { Router, ActivatedRoute } from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
-import { AuthCommonService } from './../auth-common-service.service';
+import { AuthCommonService } from './../services/auth-common-service.service';
 import { ModalPopUpComponent } from 'src/app/shared/modal-pop-up/modal-pop-up/modal-pop-up.component';
 import { NbDialogService } from '@nebular/theme';
 

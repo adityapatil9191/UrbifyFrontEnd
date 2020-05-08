@@ -1,4 +1,4 @@
-import { AuthCommonService } from './../auth-common-service.service';
+import { AuthCommonService } from './../services/auth-common-service.service';
 import { Route, ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { switchMap, map } from 'rxjs/operators';
