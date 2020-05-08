@@ -1,3 +1,4 @@
+import { ProfessionalRouteGuard } from './global-services/professional-route.guard';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'professional-dashboard',
-    loadChildren: () => import('./modules/professional-dashboard/professional-dashboard.module').then(m => m.ProfessionalDashboardModule)
+    loadChildren: () => import('./modules/professional-dashboard/professional-dashboard.module').then(m => m.ProfessionalDashboardModule),
+    canActivate:[ProfessionalRouteGuard]
   }
 ];
 

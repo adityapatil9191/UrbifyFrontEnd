@@ -44,6 +44,7 @@ export class LoginComponent extends NbLoginComponent implements OnInit {
     }
     this.authCommonService.loginUser(loginObject).subscribe((data)=>{
       if(data.error === false){
+        localStorage.setItem('authToken', data.data.authToken);
         this.dialogService.open(ModalPopUpComponent, {
             context: {
               title: data.message,
