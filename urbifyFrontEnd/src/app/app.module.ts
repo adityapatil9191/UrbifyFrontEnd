@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './global-services/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -7,7 +8,7 @@ import { NbThemeModule, NbLayoutModule, NbIconModule, NbDialogModule, NbWindowMo
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { HomePageHeaderModule } from './core/headers/home-page-header/home-page-header.module';
 import { SideBarModule } from './shared/side-bar/side-bar.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
 
 @NgModule({
@@ -37,7 +38,11 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
       forms: {},
     })
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:AuthInterceptor,
+    multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
