@@ -19,6 +19,7 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { RegistrationSuccessfullComponent } from './registration-successfull/registration-successfull.component';
 import { EmailVerifiedComponent } from './email-verified/email-verified.component';
 
+
 @NgModule({
   declarations: [
     LoginComponent,

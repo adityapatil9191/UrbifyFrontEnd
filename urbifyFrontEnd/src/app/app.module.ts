@@ -1,3 +1,5 @@
+import { LoaderInterceptor } from './global-services/loader.interceptor';
+import { LoaderService } from './global-services/loader.service';
 import { AuthInterceptor } from './global-services/auth.interceptor';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +12,7 @@ import { HomePageHeaderModule } from './core/headers/home-page-header/home-page-
 import { SideBarModule } from './shared/side-bar/side-bar.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
+import { LoaderModule } from './shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
     SideBarModule,
     NbIconModule,
     HomePageHeaderModule,
+    LoaderModule,
     BrowserAnimationsModule,
     NbDialogModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
@@ -38,11 +42,19 @@ import { NbPasswordAuthStrategy, NbAuthModule } from '@nebular/auth';
       forms: {},
     })
   ],
-  providers: [{
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:LoaderInterceptor,
+      multi:true
+    },
+    {
     provide:HTTP_INTERCEPTORS,
     useClass:AuthInterceptor,
     multi:true
-  }],
+  },
+  LoaderService
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
