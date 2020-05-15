@@ -1,6 +1,8 @@
+import { DataSharingService } from './../services/data-sharing.service';
+import { AuthCommonService } from './../services/auth-common-service.service';
 import { Component, OnInit, ChangeDetectorRef, Inject, Output, EventEmitter } from '@angular/core';
 import {NbRegisterComponent, NbAuthService, NB_AUTH_OPTIONS} from '@nebular/auth';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
@@ -15,10 +17,14 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     @Inject(NB_AUTH_OPTIONS) protected options = {},
     protected cd: ChangeDetectorRef,
     protected router: Router,
-    protected fb: FormBuilder
+    protected fb: FormBuilder,
+    public authCommonService: AuthCommonService,
+    public dataSharing:DataSharingService,
+    public route: ActivatedRoute
     ) {
       super(service, options, cd, router);
     }
+  selectedItem = '2';
   professionalRegisterForm;
   fvalue;
   @Output() sendFormValues = new EventEmitter();
@@ -26,9 +32,10 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     this.professionalRegisterForm = this.fb.group({
       fullname : ['', [ Validators.required]],
       email : ['', [ Validators.required, Validators.email]],
-      experience: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
-      password: ['', Validators.required],
-      repeatPassword: ['', Validators.required]
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(40)]],
+      repeatPassword: ['', [Validators.required,Validators.minLength(4), Validators.maxLength(40)]],
+      professional: ['', Validators.required],
+      phnNumber: ['', [ Validators.required, Validators.pattern( '^[0-9]*$' )]],
     },
     { validator: this.matchingPasswords('password', 'repeatPassword')}
     );
@@ -50,8 +57,16 @@ export class RegisterProfessionalComponent extends NbRegisterComponent implement
     };
 }
 
-  register() {
-    this.sendFormValues.emit(this.fvalue);
+registerProfessional() {
+    const registerFormData = {
+      fullname: this.fvalue.fullname.value,
+      email: this.fvalue.email.value,
+      password: this.fvalue.password.value,
+      phnNumber:this.fvalue.phnNumber.value,
+      professional:  this.fvalue.professional.value,
+    }
+    this.dataSharing.getRegisteredUserData(registerFormData);
+    this.router.navigate(['../termsandconditions'], { relativeTo: this.route });
   }
 
 }
