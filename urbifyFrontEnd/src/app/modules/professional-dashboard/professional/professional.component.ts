@@ -4,6 +4,8 @@ import { UploadCoverPhotoComponent } from './edit/upload-cover-photo/upload-cove
 import { UploadProfilePicComponent } from './edit/upload-profile-pic/upload-profile-pic.component';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import InlineEditor from '@ckeditor/ckeditor5-build-inline';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClientService } from 'src/app/global-services/http-client.service';
 
 @Component({
   selector: 'app-professional',
@@ -12,9 +14,21 @@ import InlineEditor from '@ckeditor/ckeditor5-build-inline';
 })
 export class ProfessionalComponent implements OnInit {
   public Editor = InlineEditor;
-  constructor(private dialogService: NbDialogService) { }
+  public profile;
+  constructor(
+    private route: ActivatedRoute,
+    private httpClientService: HttpClientService,
+    private dialogService: NbDialogService
+  ) { }
 
   ngOnInit() {
+    this.route.params.subscribe(urlParams => {
+      if (urlParams.profileId) {
+        this.httpClientService.getProfileInfo(urlParams.profileId).subscribe((profile: any) => {
+          this.profile = profile.data;
+        })
+      }
+    })
   }
 
   editCoverPhoto() {

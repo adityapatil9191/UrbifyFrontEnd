@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/professional-page/professional-page.module').then(m => m.ProfessionalPageModule)
   },
   {
-    path: 'professional-dashboard',
+    path: 'professional-dashboard/:profileId',
     loadChildren: () => import('./modules/professional-dashboard/professional-dashboard.module').then(m => m.ProfessionalDashboardModule),
     canActivate:[ProfessionalRouteGuard]
   }

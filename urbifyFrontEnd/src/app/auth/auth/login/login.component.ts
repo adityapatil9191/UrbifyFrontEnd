@@ -45,7 +45,8 @@ export class LoginComponent extends NbLoginComponent implements OnInit {
     this.authCommonService.loginUser(loginObject).subscribe((data)=>{
       if(data.error === false){
         localStorage.setItem('authToken', data.data.authToken);
-        this.router.navigate(['professional-dashboard']);
+        console.log(data)
+        this.router.navigate([`/professional-dashboard/${data.data.userDetails.profileId}`]);
       }
     },
     (error)=>{
