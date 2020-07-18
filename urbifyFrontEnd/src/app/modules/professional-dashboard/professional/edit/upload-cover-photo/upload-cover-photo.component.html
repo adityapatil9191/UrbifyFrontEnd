@@ -1,7 +1,16 @@
 <nb-card>
   <nb-card-header>Upload cover photo</nb-card-header>
   <nb-card-body>
-    <app-drag-and-drop></app-drag-and-drop>
-    <button nbButton fullWidth  class="m-2" status="primary">Upload</button>
+    <app-drag-and-drop (droppedFiles)="coverPhoto = $event"></app-drag-and-drop>
+    <button
+      *ngIf="!!coverPhoto"
+      nbButton
+      fullWidth
+      class="m-2"
+      status="primary"
+      (click)="uploadCoverPhoto()"
+    >
+      Upload
+    </button>
   </nb-card-body>
 </nb-card>
